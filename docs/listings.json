@@ -2,7 +2,8 @@
   {
     "listing": "/blog.html",
     "items": [
-      "/posts/Quarto_blog.html"
+      "/posts/Quarto_blog.html",
+      "/posts/FPT_deploy.html"
     ]
   }
 ]

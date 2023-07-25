@@ -1,0 +1,2028 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Marcelo Rosales">
+<meta name="dcterms.date" content="2023-07-13">
+<meta name="description" content="Quick start for quarto">
+
+<title>Site_name - Quarto Blog</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Site_name - Quarto Blog">
+<meta property="og:description" content="Quick start for quarto">
+<meta property="og:site-name" content="Site_name">
+<meta name="twitter:title" content="Site_name - Quarto Blog">
+<meta name="twitter:description" content="Quick start for quarto">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Site_name</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../blog.html">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-software" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Software</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-software">    
+        <li class="dropdown-header">RStudio</li>
+        <li class="dropdown-header">ImageJ</li>
+        <li class="dropdown-header">Analyze12</li>
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-navsubmenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">NavSubmenu</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-navsubmenu">    
+        <li class="dropdown-header">Notes</li>
+        <li class="dropdown-header">Report a Bug</li>
+        <li>
+    <a class="dropdown-item" href="https://github.com/quarto-dev/quarto-cli/discussions"><i class="bi bi-chat-right-text" role="img">
+</i> 
+ <span class="dropdown-text">Ask a Question</span></a>
+  </li>  
+        <li class="dropdown-header">FAQ</li>
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://marcelorosales.github.io/descSPIM_LSmicro/"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://quarto.org/docs/blog/index.xml"><i class="bi bi-rss" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link active" data-scroll-target="#quarto">Quarto</a>
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a>
+  <ul>
+  <li><a href="#create-new-quarto-project." id="toc-create-new-quarto-project." class="nav-link" data-scroll-target="#create-new-quarto-project.">1. Create New quarto project.</a></li>
+  <li><a href="#configure-_quarto.yml-file" id="toc-configure-_quarto.yml-file" class="nav-link" data-scroll-target="#configure-_quarto.yml-file">2. Configure _quarto.yml file</a>
+  <ul>
+  <li><a href="#change-output-dir" id="toc-change-output-dir" class="nav-link" data-scroll-target="#change-output-dir">2.1 Change output dir:</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#href-docsfaqindex.qmd" id="toc-href-docsfaqindex.qmd" class="nav-link" data-scroll-target="#href-docsfaqindex.qmd">href: docs/faq/index.qmd</a></li>
+  <li><a href="#text-quarto-github" id="toc-text-quarto-github" class="nav-link" data-scroll-target="#text-quarto-github">text: Quarto GitHub</a>
+  <ul>
+  <li><a href="#create-scss-files-for-theme-and-theme-dark-options" id="toc-create-scss-files-for-theme-and-theme-dark-options" class="nav-link" data-scroll-target="#create-scss-files-for-theme-and-theme-dark-options">2.2 Create scss files for theme and theme-dark options:</a></li>
+  <li><a href="#set-hltm-format-and-add-css-created" id="toc-set-hltm-format-and-add-css-created" class="nav-link" data-scroll-target="#set-hltm-format-and-add-css-created">2.3 Set hltm format and add css created</a></li>
+  <li><a href="#styled-website-nav" id="toc-styled-website-nav" class="nav-link" data-scroll-target="#styled-website-nav">2.4 Styled website nav</a></li>
+  <li><a href="#add-a-.nojekyll-file" id="toc-add-a-.nojekyll-file" class="nav-link" data-scroll-target="#add-a-.nojekyll-file">2.5 Add a .nojekyll file</a></li>
+  <li><a href="#render-the-created-page-and-check-status." id="toc-render-the-created-page-and-check-status." class="nav-link" data-scroll-target="#render-the-created-page-and-check-status.">3. Render the created page and check status.</a></li>
+  <li><a href="#connect-to-github" id="toc-connect-to-github" class="nav-link" data-scroll-target="#connect-to-github">4. Connect to GitHub</a>
+  <ul>
+  <li><a href="#in-github.com" id="toc-in-github.com" class="nav-link" data-scroll-target="#in-github.com">4.1 In github.com:</a></li>
+  <li><a href="#connect-quarto-website-to-github-with" id="toc-connect-quarto-website-to-github-with" class="nav-link" data-scroll-target="#connect-quarto-website-to-github-with">4.2 Connect Quarto website to Github with:</a></li>
+  <li><a href="#after-first-commit" id="toc-after-first-commit" class="nav-link" data-scroll-target="#after-first-commit">4.3 After first commit:</a></li>
+  </ul></li>
+  <li><a href="#deploy-gh-page-to-hostinger-through-git." id="toc-deploy-gh-page-to-hostinger-through-git." class="nav-link" data-scroll-target="#deploy-gh-page-to-hostinger-through-git.">5. Deploy gh-page to Hostinger through git.</a>
+  <ul>
+  <li><a href="#through-webhost-cpanel-and-git-manager" id="toc-through-webhost-cpanel-and-git-manager" class="nav-link" data-scroll-target="#through-webhost-cpanel-and-git-manager">5.1 Through webhost cpanel and git manager</a></li>
+  <li><a href="#buy-a-domain" id="toc-buy-a-domain" class="nav-link" data-scroll-target="#buy-a-domain">5.2 Buy a Domain</a></li>
+  </ul></li>
+  <li><a href="#video-support" id="toc-video-support" class="nav-link" data-scroll-target="#video-support">Video support:</a>
+  <ul>
+  <li><a href="#how-to-point-domain-name-to-web-hosting" id="toc-how-to-point-domain-name-to-web-hosting" class="nav-link" data-scroll-target="#how-to-point-domain-name-to-web-hosting"><strong>How to Point Domain Name to Web Hosting</strong></a></li>
+  <li><a href="#how-to-add-a-custom-domain-on-github-pages" id="toc-how-to-add-a-custom-domain-on-github-pages" class="nav-link" data-scroll-target="#how-to-add-a-custom-domain-on-github-pages"><strong>How to add a Custom Domain on Github Pages</strong></a></li>
+  </ul></li>
+  <li><a href="#add-a-domain-to-hostinger-webpage" id="toc-add-a-domain-to-hostinger-webpage" class="nav-link" data-scroll-target="#add-a-domain-to-hostinger-webpage">Add a Domain to Hostinger webpage</a></li>
+  <li><a href="#add-sub-domain-in-hostinger" id="toc-add-sub-domain-in-hostinger" class="nav-link" data-scroll-target="#add-sub-domain-in-hostinger">Add sub-domain in Hostinger</a></li>
+  <li><a href="#deploy-with-github-actions" id="toc-deploy-with-github-actions" class="nav-link" data-scroll-target="#deploy-with-github-actions">Deploy with Github Actions</a></li>
+  <li><a href="#create-ftp-account" id="toc-create-ftp-account" class="nav-link" data-scroll-target="#create-ftp-account">Create FTP account</a></li>
+  <li><a href="#deploy-from-github-repository" id="toc-deploy-from-github-repository" class="nav-link" data-scroll-target="#deploy-from-github-repository"><strong>Deploy from GitHub repository</strong></a></li>
+  <li><a href="#end" id="toc-end" class="nav-link" data-scroll-target="#end">End</a></li>
+  <li><a href="#core-shell-01" id="toc-core-shell-01" class="nav-link" data-scroll-target="#core-shell-01">Core-shell 01</a></li>
+  <li><a href="#other-references" id="toc-other-references" class="nav-link" data-scroll-target="#other-references">Other References:</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Quarto Blog</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">photos</div>
+    <div class="quarto-category">lightbox</div>
+    <div class="quarto-category">gallelry</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Quick start for quarto
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Marcelo Rosales </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 13, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="quarto" class="level2">
+<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
+<section id="summary" class="level3">
+<h3 class="anchored" data-anchor-id="summary">Summary</h3>
+<section id="create-new-quarto-project." class="level4">
+<h4 class="anchored" data-anchor-id="create-new-quarto-project.">1. Create New quarto project.</h4>
+<p>File &gt; New Project &gt; New directory &gt; Quarto website &gt; Browse: ~/Documents/GitHub/Quarto; dir name: descSPIM_LSmicro &gt; create repository.</p>
+<blockquote class="blockquote">
+<p>To wrap code in Rstudio: <code>//Code » Soft wrap long lines</code></p>
+</blockquote>
+<p><strong>Files:</strong></p>
+<ul>
+<li>Renv »
+<ul>
+<li>styles.css »</li>
+<li>_quarto.yml</li>
+<li>renv.lock</li>
+<li>about.qmd</li>
+<li>index.qmd</li>
+<li>Research_Notes_230601.Rproj</li>
+</ul></li>
+</ul>
+<p><strong>Files + hiden files:</strong></p>
+<ul>
+<li><code>.git</code> »</li>
+<li><code>.Rproj.user</code> »</li>
+<li>Renv »
+<ul>
+<li>styles.css</li>
+<li>_quarto.yml</li>
+<li><code>.gitignore</code></li>
+<li>renv.lock</li>
+<li>about.qmd</li>
+<li>index.qmd</li>
+<li>Research_Notes_230601.Rproj</li>
+</ul></li>
+</ul>
+<p><strong>Render Q site files:</strong></p>
+<ul>
+<li><code>_site</code> »</li>
+<li>.git</li>
+<li><code>.quarto</code></li>
+<li>.Rproj.user</li>
+<li>renv
+<ul>
+<li>styles.css</li>
+<li>_quarto.yml</li>
+<li>.gitignore</li>
+<li>.Rprofile</li>
+<li>renv.lock</li>
+<li>about.qmd</li>
+<li>index.qmd</li>
+<li>Research_Notes_230601.Rproj</li>
+</ul></li>
+</ul>
+<p>Open files:</p>
+<ul>
+<li>index.qmd,</li>
+<li>_quarto.yml</li>
+</ul>
+<p>Folder contains:</p>
+<ul>
+<li>styles.css</li>
+<li>about.qmd</li>
+<li>index.qmd</li>
+<li>descSPIM_LSmicro.Rproj</li>
+<li>_quarto.yml</li>
+</ul>
+</section>
+<section id="configure-_quarto.yml-file" class="level4">
+<h4 class="anchored" data-anchor-id="configure-_quarto.yml-file">2. Configure _quarto.yml file</h4>
+<p>Auto-completion works by pressing tab. Careful!! tab level influence auto-complation options. If in the wrong level, then option will not be found.</p>
+<p>See:</p>
+<p><a href="https://quarto.org/docs/websites/website-navigation.html#overview">Website Navigation</a> <a href="https://quarto.org/docs/output-formats/page-layout.html#grid-customization">Page Layout</a></p>
+<section id="change-output-dir" class="level5">
+<h5 class="anchored" data-anchor-id="change-output-dir">2.1 Change output dir:</h5>
+<p>Change output form <code>_site</code> to <code>docs</code>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>_quarto.yml simple template-01:</p>
+<p>``` {#_quarto.yml template-01: .yaml} project: type: website output-dir: docs</p>
+<p>website: title: “Site_name” image: “images/img01.png” # where this images goes?. only works with specifit themes?… favicon: “images/favicon.png” # Small icon in the bewbrowser tab (ex. uni logo) open-graph: true #https://quarto.org/docs/websites/website-tools.html, https://www.youtube.com/watch?v=QwEQKM4YRnU&amp;t=2s #twitter-card: true #https://quarto.org/docs/websites/website-tools.html#twitter-cards search: true</p>
+<p>navbar: left: - href: index.qmd text: Home - about.qmd</p>
+<p>format: html: fontsize: “5” toc: true toc-depth: 6 theme: light: [cosmo, theme.scss] dark: [cosmo, theme-dark.scss] # change theme (cosmo) colors and formats in the scss files code-copy: true code-fold: true code-overflow: wrap code-block-bg: true code-block-border-left: “#31BAE9” # code-line-numbers: true css: styles.css # include-after-body: js.html # self-contained: false # If true, it will not create the site files but one html file. # grid: # sidebar-width: 250px # body-width: 900px # margin-width: 300px # tbl-colwidths: [40, 60] # tables column withs 40% and 60% docx: default</p>
+<p>editor: visual</p>
+<pre><code>
+\_quarto.yml simple template-02:
+
+``` {#_quarto.yml template-02: .yaml}
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "descSPIM_LSmicro"
+  favicon: ""
+  open-graph: true
+  search: true
+  navbar:
+    background: light
+    logo: ""
+    logo-alt: ""
+    logo-href: ""
+    collapse-below: lg
+    
+    left:
+      - href: index.qmd
+        text: "Home"
+      - href: about.qmd
+        text: "About"
+      - href: Software.qmd
+        text: "Software"
+  
+      - text: "Protocols"
+        menu: 
+          - href: supplementary/Protocols/Cubic/Cubic.qmd
+            text: "Cubic"
+  
+      - text: "Supplementary"
+        menu: 
+          - href: supplementary/3dimaging/index.qmd
+            text: "3D Imaging"
+          - href: supplementary/construction/index.qmd
+            text: "Construction"
+          - href: supplementary/OpticalAligment/OpticalAligment.qmd
+            text: "Optical Aligment"
+
+    right: 
+      - icon: github
+        href: "https://marcelorosales.github.io/descSPIM_LSmicro/"
+      - icon: rss
+
+  sidebar: 
+    - id: ""
+
+format:
+  html:
+    theme: 
+      light: [cosmo, theme.scss]
+      dark: [cosmo, theme-dark.scss]
+    css: styles.css
+    code-copy: true
+    code-overflow: wrap
+    code-link: true
+    toc: true
+    include-after-body: js.html
+    self-contained: false
+    grid:
+      sidebar-width: 250px
+      body-width: 900px
+      margin-width: 300px
+
+editor: source
+</code></pre>
+<p>_quarto.yml template-03:</p>
+<p>``` {#_quarto.yml template-03: .yaml} project: type: website output-dir: docs</p>
+<p>website: title: “MySite” image: “images/img01.png” # where this images goes?. only works with specifit themes?… favicon: “images/favicon.png” # Small icon in the bewbrowser tab (ex. uni logo) open-graph: true #https://quarto.org/docs/websites/website-tools.html, https://www.youtube.com/watch?v=QwEQKM4YRnU&amp;t=2s #twitter-card: true #https://quarto.org/docs/websites/website-tools.html#twitter-cards search: true navbar: background: light # this is the color option of the nav bg, but I set color in format: with theme.scss. # Options:<code>primary</code>, <code>secondary</code>, <code>success</code>, <code>danger</code>, <code>warning</code>, <code>info</code>, <code>light</code>, <code>dark</code> logo: “images/nav_img.png” # logo in nav bar. logo-alt: “link to Mkdocs” logo-href: “https://marcelorosales.github.io/MkDocsTest1/MkDocs/” collapse-below: lg</p>
+<pre><code>left:
+  - text: "Home"
+    href: index.qmd
+  - text: "About"
+    href: about.qmd
+  - text: "All Notes"
+    href: All_notes.qmd
+  - text: "Software"   #  href: files/Software/index.qmd # Dropdown menu can not have lading page. 
+    menu: 
+      - text: "RStudio"
+        href: files/Software/RStudio/index.qmd # when inputing index.qmd doesnt work. Try other file and retry.
+      - text: "ImageJ"
+        href: files/Software/ImageJ/index.qmd
+      - text: "Analyze12"
+        href: files/Software/Analyze12/index.qmd
+  - text: "Blog"
+    href: blog.qmd
+  - text: "NavSubmenu"
+    menu:
+      - text: "Notes &amp; 2do"
+        href: files/Notes_2do/index.qmd #In "" because &amp; is not a valid caracter for raw yml
+      - text: "Report a Bug"
+        icon: "bug"
+        href: "https://github.com/quarto-dev/quarto-cli/issues"
+      - text: "Ask a Question"
+        icon: "chat-right-text"
+        href: "https://github.com/quarto-dev/quarto-cli/discussions"
+      - text: "FAQ"
+        icon: "question-circle"</code></pre>
+</section>
+</section>
+</section>
+</section>
+<section id="href-docsfaqindex.qmd" class="level1">
+<h1>href: docs/faq/index.qmd</h1>
+<pre><code>right: 
+  - icon: github
+    href: https://github.com/quarto-dev/quarto-cli</code></pre>
+</section>
+<section id="text-quarto-github" class="level1">
+<h1>text: Quarto GitHub</h1>
+<pre><code>  - icon: rss
+    href: https://quarto.org/docs/blog/index.xml
+    </code></pre>
+<p>sidebar: - id: RStudio title: “Get Started with the RStudio” style: “floating” collapse-level: 3 align: left contents:<br>
+- text: R Studio href: files/Software/RStudio/index.qmd<br>
+- text: “Install” href: files/Software/RStudio/R_install.qmd<br>
+- text: “R Packages” href: files/Software/RStudio/R_Packages.qmd</p>
+<pre><code>- id: ImageJ 
+  title: "Get Started with ImageJ"
+  style: "floating"
+  collapse-level: 3
+  align: left
+  contents:  
+    - files/Software/ImageJ/index.qmd  
+    - text: "Install"
+      href: files/Software/ImageJ/ImgJ_install.qmd  
+    - text: "ImgJ Packade"
+      href: files/Software/ImageJ/ImgJ_Packages.qmd
+    - text: "Git try"
+      href: posts/Git.qmd</code></pre>
+<p>format: html: fontsize: “” toc: true toc-depth: 6 theme: light: [cosmo, theme.scss] dark: [cosmo, theme-dark.scss] # change theme (cosmo) colors and formats in the scss files code-copy: true code-fold: false code-overflow: wrap code-block-bg: true code-block-border-left: “#31BAE9” # code-line-numbers: true css: styles.css include-after-body: js.html self-contained: false # If true, it will not create the site files but one html file. grid: sidebar-width: 250px body-width: 900px margin-width: 300px # tbl-colwidths: [40, 60] # tables column withs 40% and 60%</p>
+<p>filters: - lightbox # requires install of extension inside the project See “Complete Lightbox Example” post $quarto add quarto-ext/lightbox lightbox: match: auto</p>
+<p>editor: source editor_options: markdown: canonical: true</p>
+<p>#execute: # freeze: auto # This prevent R, Python, and Julia code is only executed locally,</p>
+<pre><code>
+\_quarto.yml template-04 (comprehensive):
+
+``` yaml
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Site_name"
+  image: "" # where this images goes?
+  favicon: "" # Browsers' tab icon (uni logo)
+  open-graph: true 
+  twitter-card: true 
+  search: true 
+
+  navbar:
+    background: light
+    logo: ""
+    logo-alt: ""
+    logo-href: ""
+    collapse-below: lg
+    
+    left:
+      - href: index.qmd
+        text: "Home"
+      - href: about.qmd
+        text: "About"
+      - href: blog.qmd
+        text: "Blog"
+  
+      - text: "Software"   
+        menu: 
+          - text: "RStudio"
+            href: "" # Ex. files/Software/RStudio/Rstudio.qmd 
+          - text: "ImageJ"
+            href: "" 
+          - text: "Analyze12"
+            href: ""
+
+      - text: "NavSubmenu"
+        menu:
+          - text: "Notes"
+            href: ""
+          - text: "Report a Bug"
+            icon: "bug"
+            href: ""
+          - text: "Ask a Question"
+            icon: "chat-right-text"
+            href: "https://github.com/quarto-dev/quarto-cli/discussions"
+          - text: "FAQ"
+            icon: "question-circle"
+            href: ""
+
+    right: 
+      - icon: github
+        href: "https://marcelorosales.github.io/descSPIM_LSmicro/"
+#        text: Quarto GitHub
+      - icon: rss
+        href: https://quarto.org/docs/blog/index.xml
+
+  sidebar:
+    - id: RStudio 
+      title: "Get Started with the RStudio"
+      style: "floating"
+      collapse-level: 3
+      align: left
+      contents:  
+        - text: R Studio
+          href: "" # ex. files/Software/RStudio/index.qmd  
+        - text: "Install"
+          href: ""
+
+    - id: ImageJ 
+      title: "Get Started with ImageJ"
+      style: "floating"
+      collapse-level: 3
+      align: left
+      contents:  
+        - text: "Install"
+          href: ""
+        - text: "ImgJ Packade"
+          href: ""
+        - text: "Git try"
+          href: ""
+
+
+format:
+  html:
+    fontsize: ""  # "5"
+    toc: true
+    toc-depth: 6
+    theme:
+      light: [cosmo, theme.scss]
+      dark: [cosmo, theme-dark.scss] # change theme (cosmo) colors and formats in the scss files
+    code-copy: true
+    code-fold: true
+    code-overflow: wrap
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+#    code-line-numbers: true
+    code-link: true
+    css: styles.css
+#    include-after-body: js.html
+#    self-contained: false # If true, it will not create the site files but one html file. 
+#    grid:
+#      sidebar-width: 250px
+#      body-width: 900px
+#      margin-width: 300px
+#    tbl-colwidths: [40, 60]  # tables column withs 40% and 60%
+  docx: default
+
+filters:
+  - lightbox # requires install of extension inside the project See "Complete Lightbox Example" post $quarto add quarto-ext/lightbox
+lightbox:
+  match: auto
+
+# editor: source
+# editor_options:
+#   markdown:
+#     canonical: true
+
+#execute: 
+#  freeze: auto  # This prevent R, Python, and Julia code is only executed locally,</code></pre>
+<section id="create-scss-files-for-theme-and-theme-dark-options" class="level5">
+<h5 class="anchored" data-anchor-id="create-scss-files-for-theme-and-theme-dark-options">2.2 Create scss files for theme and theme-dark options:</h5>
+<p>theme.scss</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">/*-- scss:defaults --*/</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="va">$link-color</span>: <span class="cn">#39729E</span><span class="op">;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="va">$text-muted</span>: <span class="cn">#6a737b</span><span class="op">;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">// Navigation element colors</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="va">$footer-bg</span>: <span class="cn">#181818</span><span class="op">;</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="va">$navbar-bg</span>: <span class="cn">#EEEEEE</span> <span class="op">;</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">/*-- scss:rules --*/</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">.layout-example</span> {</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background</span>: <span class="va">$gray-500</span><span class="op">;</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="va">$white</span><span class="op">;</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">text-align</span>: <span class="dv">center</span><span class="op">;</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">margin-bottom</span>: <span class="dv">1</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-family</span>: <span class="va">$font-family-monospace</span><span class="op">;</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span>: <span class="dv">.875</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-weight</span>: <span class="dv">600</span><span class="op">;</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-top</span>: <span class="dv">1</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-radius</span>: <span class="dv">3</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="fu">.left</span> {</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>  <span class="kw">text-align</span>: <span class="dv">left</span><span class="op">;</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-left</span>: <span class="dv">1</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="fu">.right</span> {</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>  <span class="kw">text-align</span>: <span class="dv">right</span><span class="op">;</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-right</span>: <span class="dv">1</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="fu">.hello-quarto-banner</span> h1 {</span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>  <span class="kw">margin-top</span>: <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>  <span class="kw">margin-bottom</span>: <span class="dv">0.5</span><span class="dt">rem</span><span class="op">;</span></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>theme-dark.scss</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">/*-- scss:defaults --*/</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">// Base document colors</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="va">$body-bg</span>: <span class="cn">#181818</span><span class="op">;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="va">$body-color</span>: <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="va">$link-color</span>: <span class="cn">#75AADB</span><span class="op">;</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="va">$light</span>: <span class="cn">#525252</span><span class="op">;</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co">// Navigation element colors</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="va">$footer-bg</span>: <span class="cn">#181818</span><span class="op">;</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="va">$navbar-bg</span>: <span class="cn">#303030</span><span class="op">;</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co">// Code blocks</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="va">$code-block-bg-alpha</span>: <span class="op">-</span><span class="dv">.8</span><span class="op">;</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co">// Bootstrap popovers</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="va">$popover-bg</span>: <span class="cn">#242424</span><span class="op">;</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="co">// Bootstrap inputs</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="va">$input-bg</span>: <span class="cn">#242424</span><span class="op">;</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="va">$dropdown-bg</span>: <span class="va">$body-bg</span><span class="op">;</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="va">$dropdown-color</span>: <span class="va">$body-color</span><span class="op">;</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="va">$dropdown-link-color</span>: <span class="va">$body-color</span><span class="op">;</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="va">$dropdown-link-hover-bg</span>: <span class="va">$gray-600</span><span class="op">;</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="va">$dropdown-link-hover-color</span>: <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a><span class="co">/*-- scss:rules --*/</span></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a><span class="fu">.layout-example</span> {</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background</span>: <span class="va">$gray-700</span><span class="op">;</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="set-hltm-format-and-add-css-created" class="level5">
+<h5 class="anchored" data-anchor-id="set-hltm-format-and-add-css-created">2.3 Set hltm format and add css created</h5>
+<p>Original yaml:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> cosmo</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Personalized html format in yaml:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fontsize</span><span class="kw">:</span><span class="at"> </span><span class="st">"5"</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">6</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">light</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">cosmo</span><span class="kw">,</span><span class="at"> theme.scss</span><span class="kw">]</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">dark</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">cosmo</span><span class="kw">,</span><span class="at"> theme-dark.scss</span><span class="kw">]</span><span class="co"> # change theme (cosmo) colors and formats in the scss files</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-copy</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-fold</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-overflow</span><span class="kw">:</span><span class="at"> wrap</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-block-bg</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-block-border-left</span><span class="kw">:</span><span class="at"> </span><span class="st">"#31BAE9"</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="co">#    code-line-numbers: true</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-after-body</span><span class="kw">:</span><span class="at"> js.html</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">self-contained</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="co"> # If true, it will not create the site files but one html file. </span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">grid</span><span class="kw">:</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">sidebar-width</span><span class="kw">:</span><span class="at"> 250px</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">body-width</span><span class="kw">:</span><span class="at"> 900px</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">margin-width</span><span class="kw">:</span><span class="at"> 300px</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="co">#    tbl-colwidths: [40, 60]  # tables column withs 40% and 60%</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="styled-website-nav" class="level5">
+<h5 class="anchored" data-anchor-id="styled-website-nav">2.4 Styled website nav</h5>
+<p>Add Icons and search bar:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"MySite"</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"images/img01.png"</span><span class="co"> # where this images goes?. only works with specifit themes?...</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">favicon</span><span class="kw">:</span><span class="at"> </span><span class="st">"images/favicon.png"</span><span class="co"> # Small icon in the bewbrowser tab (ex. uni logo)</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">open-graph</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> #https://quarto.org/docs/websites/website-tools.html, https://www.youtube.com/watch?v=QwEQKM4YRnU&amp;t=2s</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">  #twitter-card: true #https://quarto.org/docs/websites/website-tools.html#twitter-cards</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">search</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="at"> </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="add-a-.nojekyll-file" class="level5">
+<h5 class="anchored" data-anchor-id="add-a-.nojekyll-file">2.5 Add a .nojekyll file</h5>
+<p>to the root of your repository that tells GitHub Pages not to do additional processing of your published site using Jekyll (the GitHub default site generation tool). see: <strong>Quarto-GitHub Pages</strong></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> .nojekyll</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="render-the-created-page-and-check-status." class="level4">
+<h4 class="anchored" data-anchor-id="render-the-created-page-and-check-status.">3. Render the created page and check status.</h4>
+<p>Build &gt; Render Web site</p>
+<p><strong>Render Q site files:</strong></p>
+<ul>
+<li><code>_site</code> »</li>
+<li>.git</li>
+<li><code>.quarto</code></li>
+<li>.Rproj.user</li>
+<li>renv
+<ul>
+<li>styles.css</li>
+<li>_quarto.yml</li>
+<li>.gitignore</li>
+<li>.Rprofile</li>
+<li>renv.lock</li>
+<li>about.qmd</li>
+<li>index.qmd</li>
+<li>Research_Notes_230601.Rproj</li>
+</ul></li>
+</ul>
+</section>
+<section id="connect-to-github" class="level4">
+<h4 class="anchored" data-anchor-id="connect-to-github">4. Connect to GitHub</h4>
+<section id="in-github.com" class="level5">
+<h5 class="anchored" data-anchor-id="in-github.com">4.1 In github.com:</h5>
+<ol type="1">
+<li><p>Create repo</p>
+<p><code>Github » create new repo » name: » description: » ©Public » © Add readme file » © Add .gitignore: ˇ{R} » © Create repository</code></p></li>
+<li><p>Create git ignore:</p>
+<ul>
+<li>git ignore R files</li>
+<li>/_site/</li>
+</ul></li>
+<li><p>Repo settings:</p>
+<p><code>Settings » Pages » Source » ˇBranch: © main » /(docs) » ©save (new page is created)</code></p></li>
+<li><p>Copy page address:</p>
+<p><code>Got to // Code » code » clone » htpps (copy github page address)</code></p></li>
+<li><p>Set page address in About:</p>
+<p><code>Go to // Code » About » settings (gear) » website » © use your github website » save changes</code></p></li>
+<li><p>In gitignore add:</p></li>
+</ol>
+</section>
+<section id="connect-quarto-website-to-github-with" class="level5">
+<h5 class="anchored" data-anchor-id="connect-quarto-website-to-github-with">4.2 Connect Quarto website to Github with:</h5>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config –global init.defaultBranch main <span class="co"># New repos will use "main" as default branch</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-m</span> main <span class="co"># changes the name of branch from "master" to "main" git add .</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config –global user.name <span class="op">&lt;</span>MyGitAccount<span class="op">&gt;</span> # <span class="er">(</span><span class="ex">MR</span><span class="kw">)</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config –global user.email <span class="op">&lt;</span>myemail.com<span class="op">&gt;</span> # <span class="er">(</span><span class="ex">hot</span><span class="kw">)</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Initial Commit"</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status <span class="co"># (empty)</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="ex">gedit</span> gitignore <span class="er">(</span><span class="ex">edit</span> gitignore to do not track files…<span class="pp">??</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Messages:</p>
+<p>(Solved) @ git init: Using ‘master’ as the name for the initial branch. This default branch name is subject to change. To configure the initial branch name to use in all of your new repositories, which will suppress this warning, call:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config –global init.defaultBranch <span class="op">&lt;</span>main<span class="op">&gt;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Names commonly chosen instead of ‘master’ are ‘main’, ‘trunk’ and ‘development’. The just-created branch can be renamed via this command:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-m</span> old-name new-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>&gt;_:</strong></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin <span class="op">&lt;</span>repo_url<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>message:<br>
+! [rejected] main -&gt; main (fetch first)<br>
+error: failed to push some refs to ‘https://github.com/~’</p>
+</div>
+</div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>message:<br>
+* [new branch] main -&gt; origin/main<br>
+There is no tracking information for the current branch.<br>
+Please specify which branch you want to merge with.</p>
+</div>
+</div>
+<p><a href="https://qiita.com/Takao_/items/5e563d5ea61d2829e497">What to do when git push is rejected</a></p>
+<p><strong>Solution 1</strong></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull origin main </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>! [rejected] main -&gt; main (fetch first) error: failed to push some refs to ‘https://github.com/MarceloRosales/descSPIM_LSmicro.git’</p>
+</div>
+</div>
+<p><strong>Solution 2 (solved)</strong></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-f</span> origin main <span class="co"># Forces push, careful!! deletes one of the branches (local?/remote?)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>type github username:<br>
+type github Password:<br>
+(push from local main branch to remote main branch)</p>
+<hr>
+<p>Up to now, there have been conflicts conecting github and local repo; this might help.</p>
+<p>Try next time.</p>
+<p>See: <a href="https://quarto.org/docs/publishing/github-pages.html" class="uri">https://quarto.org/docs/publishing/github-pages.html</a></p>
+<p><strong>Publish Command</strong></p>
+<p>The quarto publish command is an easy way to publish locally rendered documents and websites.</p>
+<p>Before attempting to use quarto publish (either locally or from a GitHub Action) you should be sure to configure the Source Branch and Ignore Output as described below.</p>
+<p><strong>Source Branch</strong></p>
+<p>Before attempting to publish you should ensure that the Source branch for your repository is gh-pages (now is <code>main</code> ) and that the site directory is set to the repository root (/) (now <code>main</code> ).</p>
+<p>You can modify these options in Settings : Pages for your repository.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">--orphan</span> gh-pages <span class="co"># main?</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span> <span class="co"># make sure you've committed changes before running this!</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">--allow-empty</span> <span class="at">-m</span> <span class="st">"Initialising main branch"</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin gh-pages <span class="co"># main?  </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Ignoring Output</strong></p>
+<p>It’s important to note that you don’t need to check your _site or _book directory into version control (if you have done this in the past you know it makes for very messy diffs!). Before proceeding you should add the output directory of your project to .gitignore. For example:</p>
+<pre class="gitignore"><code>.gitignore
+/.quarto/
+/_site/</code></pre>
+<p>If you’ve already checked these files into source control you may need to remove them explicitly:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rm <span class="at">-r</span> _site</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>See also <strong>Freezing Computations</strong>.</p>
+</section>
+<section id="after-first-commit" class="level5">
+<h5 class="anchored" data-anchor-id="after-first-commit">4.3 After first commit:</h5>
+<p>Modify code. (and save files)<br>
+Render</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"commit message"</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push </span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Other git commands:</strong></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reflog <span class="er">(</span><span class="ex">past</span> git logs<span class="kw">)</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> other-branch <span class="er">(</span><span class="ex">Switch</span> to a new branch<span class="kw">)</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-a</span> <span class="er">(</span><span class="ex">lists</span> of branches<span class="kw">)</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-fr</span> .git <span class="er">(</span><span class="ex">remove</span> git files<span class="kw">)</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"MR"</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"...@ho"</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config credential.helper store</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"1st commit"</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log  <span class="co"># If want to revert to a preview's version, Copy hash click Q to quit.</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout {hash copied from log}</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> {new branch name} <span class="co"># Create a new branch.</span></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch {new branch name} {hash} <span class="co"># Create new branch, if revert to previous, add hash</span></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout {branch name} <span class="co"># To change branches</span></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge {branch name} <span class="co"># merge [](https://qiita.com/Takao\_/items/5e563d5ea61d2829e497)](https://qiita.com/Takao_/items/5e563d5ea61d2829e497) branch to main</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Deploy to github pages:</strong></p>
+<p>Settings » Pages » Branch: <code>main</code>, built: <code>docs</code> » save</p>
+<p>link address will be display at the top of the GitHub Pages</p>
+<p>Github Pages » Your site is live at….</p>
+<p><strong>Set address in Repo profile:</strong></p>
+<p>Code » About (gear icon) » …[]… » website: use you GitHub Pages website</p>
+<p><strong>Add custom domain:</strong></p>
+</section>
+</section>
+<section id="deploy-gh-page-to-hostinger-through-git." class="level4">
+<h4 class="anchored" data-anchor-id="deploy-gh-page-to-hostinger-through-git.">5. Deploy gh-page to Hostinger through git.</h4>
+<p>There are 2 way of deploying gh pages to web hosts:</p>
+<ol type="1">
+<li>Through webhost cpanel git manager: Uses webhost’s git application.</li>
+<li>Through github action: Uses github itself to push web to any webhost (seems like a better option)</li>
+</ol>
+<section id="through-webhost-cpanel-and-git-manager" class="level5">
+<h5 class="anchored" data-anchor-id="through-webhost-cpanel-and-git-manager">5.1 Through webhost cpanel and git manager</h5>
+<p><a href="https://youtu.be/BovIkSKStPw">Hostinger and github for beginners:</a></p>
+<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/BovIkSKStPw" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<ol type="1">
+<li><p>In github:</p>
+<ul>
+<li>Copy the github url (https): Code » https</li>
+</ul></li>
+<li><p>Go to Hostinger account:</p>
+<p>// Hosting » Manage » © {website name} » Advance » Git » <strong>Create a New Repository »</strong></p>
+<ul>
+<li><p>Repository: Paste url</p></li>
+<li><p>Branch: main</p></li>
+<li><p>Directory: folder name ex. LSmicro</p>
+<p>† If empty it will save in Public folder, if folder name, make sure folder is empty.</p></li>
+<li><p>© Create</p></li>
+</ul></li>
+<li><p>Manage Repository</p>
+<ul>
+<li><p>Auto Deployment</p></li>
+<li><p>Copy Webhook URL » © Setup webhook on Github » …[]… »</p></li>
+<li><p>Paste webhook url in the Payload URL section » © Add webhook</p>
+<p>† Everytime there is a new update committed it will automatically sync and update page.</p></li>
+</ul></li>
+<li><p>j</p></li>
+</ol>
+</section>
+<section id="buy-a-domain" class="level5">
+<h5 class="anchored" data-anchor-id="buy-a-domain">5.2 Buy a Domain</h5>
+<p>5.3</p>
+<p>Deploy To Shared Hosting With Github Actions</p>
+</section>
+</section>
+<section id="video-support" class="level4">
+<h4 class="anchored" data-anchor-id="video-support">Video support:</h4>
+<p>How to deploy website from GitHub repository?</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UCNGbAUnbgg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/UNWIXYSZfZY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="how-to-point-domain-name-to-web-hosting" class="level5">
+<h5 class="anchored" data-anchor-id="how-to-point-domain-name-to-web-hosting"><strong>How to Point Domain Name to Web Hosting</strong></h5>
+<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/UAsYeTL8cZc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<ol type="1">
+<li><p>// Hostinger » websites (prostho2.hostingerapp.com) » Manage » See details » Nameservers » Copy the Nameservers of the website</p>
+<p>Nameservers:</p>
+<ul>
+<li>ns1.hostinger.com 31.170.163.241</li>
+<li>ns2.hostinger.com 31.220.23.1</li>
+<li>ns3.hostinger.com 173.192.183.247</li>
+<li>ns4.hostinger.com 31.170.164.249</li>
+</ul></li>
+<li><p>Go to // Domains » Domain Name (prostho2.com) » Manage » Nameservers » Change » Select Nameservers » Paste Name servers of website » Save</p>
+<p>Original Nameservers :</p>
+<ul>
+<li>ns1.dns-parking.com</li>
+<li>ns2.dns-parking.com</li>
+</ul>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Your indicated nameservers are outdated. We will set Hostinger default nameservers:</p>
+<p>ns1.dns-parking.com<br>
+ns1.dns-parking.com</p>
+<p>Changing to ns1.hostinger.com fail, and revert to original names.</p>
+</div>
+</div></li>
+<li><p>kjf</p></li>
+</ol>
+</section>
+<section id="how-to-add-a-custom-domain-on-github-pages" class="level5">
+<h5 class="anchored" data-anchor-id="how-to-add-a-custom-domain-on-github-pages"><strong>How to add a Custom Domain on Github Pages</strong></h5>
+<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/rIXWUJ5U8bY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+</section>
+<section id="add-a-domain-to-hostinger-webpage" class="level4">
+<h4 class="anchored" data-anchor-id="add-a-domain-to-hostinger-webpage">Add a Domain to Hostinger webpage</h4>
+<p>﻿<strong>1. Buy a Domain</strong></p>
+<p>// Hostinger » domains » get a new domain</p>
+<p>or if you have a domain: <a href="https://support.hostinger.com/en/articles/4068055-how-to-move-a-domain-between-different-hostinger-accounts">Move a Domain Between Different Hostinger Accounts</a></p>
+<ul>
+<li><p>Q. Regarding the domain, is the .click a reliable domain? or better to go for .com?</p>
+<p>A. Both of the extension domain name in .click or .com is reliable.</p>
+<p>But the more popular extension domain name is .com and most used one. So it will be better for SEO as well.</p></li>
+<li><p>Q. How about prices?</p>
+<p>My reseller is in <strong>hostinger.com.</strong> So the price of renewal domain will be :</p>
+<ol type="1">
+<li><p>.online : 0.99$ 1st year then $34.99 + tax</p></li>
+<li><p>.com : 1.99$ 1st year then $14.99 + tax</p></li>
+</ol>
+<p>All will be in USD.</p></li>
+<li><p>next</p></li>
+</ul>
+<p>My domain <strong>prostho2.com</strong> is not yet added to your hosting plan, so please add it first and copy the website from <strong>prostho2.hostingerapp.com</strong> to <strong>prostho2.com.</strong></p>
+<p>Please follow this step-by-step process:</p>
+<p><br>
+﻿<strong>1. Add website to the hosting plan (create new website):<br>
+</strong>﻿<br>
+﻿To add a domain to your account, please go to Hosting → <strong>Add Website</strong>.</p>
+<p>You can follow the steps, described in this article: <a href="https://support.hostinger.com/en/articles/1583214-how-to-add-a-website">How to add a website to hostinger</a>.</p>
+<p>While creating the site, set the domain to prostho2.com</p>
+<p><strong>2. Copy the website to the new domain (website)</strong><br>
+﻿<br>
+﻿If your old website is using WordPress, you can move WordPress website to another domain name or subdomain you can do so easily with the Copy website feature of your hPanel! Just follow this guide:</p>
+<p><a href="https://support.hostinger.com/en/articles/6601521-how-to-copy-a-wordpress-website-to-another-domain-name">How to Copy a WordPress Website to Another Domain Name</a></p>
+<p><br>
+Before starting, it is recommended to back up the content of your destination domain in case it’s not empty, as it will be overwritten. Subdomains on your destination domain will stay unchanged 😊<br>
+﻿<br>
+<strong>If your website is using another CMS, this tutorial will be helpful:</strong></p>
+<p><a href="https://support.hostinger.com/en/articles/3592280-how-to-move-a-website-s-content-to-another-domain-name">How to Move a Website’s Content to Another Domain Name</a></p>
+<p><strong>3. Change your hosting main domain to the new domain</strong><br>
+﻿<br>
+﻿If you wish to remove the old domain, a new domain must be assigned as the new main domain. More information can be found here: <a href="https://support.hostinger.com/en/articles/1583206-how-to-change-the-main-domain-of-your-hosting-account">How to change the main domain of your hosting account</a></p>
+<p>Keep me updated on how it goes and let me know if you have any questions.</p>
+<p><a href="https://scribehow.com/shared/Creating_a_Website_and_Managing_Files_for_prostho2com__4PXuoxYYSFm7PeCd8Acxjw">domain - website</a></p>
+<iframe src="https://scribehow.com/embed/Creating_a_Website_and_Managing_Files_for_prostho2com__4PXuoxYYSFm7PeCd8Acxjw" width="100%" height="640" allowfullscreen="" frameborder="0"></iframe>
+<p>Now the new site is link to the new domain.</p>
+</section>
+<section id="add-sub-domain-in-hostinger" class="level4">
+<h4 class="anchored" data-anchor-id="add-sub-domain-in-hostinger">Add sub-domain in Hostinger</h4>
+<p>It is possible to add Sub domains to your domains!!!</p>
+<p>A subdomain is a part of a larger domain name. It is used to organize and categorize different sections or subdivisions of a website. Subdomains are created by adding a prefix to the main domain name, separated by a dot (period). For example:</p>
+<p>Main Domain: example.com</p>
+<p>Subdomain: blog.example.com</p>
+<p>In this example, “example.com” is the main domain, and “blog” is the subdomain. The subdomain acts as a separate entity within the main domain and can have its own content, functionality, and organization.</p>
+<p>Subdomains are commonly used for various purposes, such as:</p>
+<ol type="1">
+<li>Organizing content: Websites may use subdomains to categorize different sections or types of content. For example, a blog section can be assigned the subdomain “blog.example.com,” while an e-commerce section can use “shop.example.com.”</li>
+<li>Multilingual sites: Subdomains can be used to create versions of a website in different languages. For instance, “fr.example.com” for the French version and “es.example.com” for the Spanish version.</li>
+<li>Separate services: Subdomains can be used to host separate services or applications associated with the main website. For instance, “mail.example.com” for email services or “app.example.com” for a web application.</li>
+<li>Testing and development: Subdomains can be utilized for testing and development purposes. Developers often create subdomains like “dev.example.com” or “staging.example.com” to work on new features or test changes before deploying them to the main website.</li>
+</ol>
+<p>It’s important to note that subdomains are part of the overall domain name hierarchy, and they can be treated as separate entities for hosting, DNS configuration, and website organization. Each subdomain can have its own content, separate FTP access, or different configuration settings.</p>
+<p>Is quite simple:</p>
+<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/CruQ94SVrSM" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>// Hostinger » dashboard » Domains » Sub-domains » Create a new sub-domain » Enter sub-domain {name} » © Custom folder for sub-domain {name} » © Create …[ ]…</p>
+<p>In the lis of current sub-domains a new sub-domain will be created with the link subdomain.domain.com. ex. lsmicro.prostho2.com and is live…</p>
+<p>A new folder is created in Public_html (Custom folder for sub-domain {name}), place your code for the page there and it will available online.</p>
+</section>
+<section id="deploy-with-github-actions" class="level4">
+<h4 class="anchored" data-anchor-id="deploy-with-github-actions">Deploy with Github Actions</h4>
+<p><strong>Deploy To Shared Hosting With Github Actions</strong></p>
+<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/UNWIXYSZfZY" title="Deploy To Shared Hosting With Github Actions" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<ol type="1">
+<li><p>Create webpage code (.html)</p></li>
+<li><p>Create a “.github/wokflows/” folders and 2 .yml files</p>
+<ul>
+<li>master.yml or main.yml ( branch_name.yml)</li>
+<li>staging.yml</li>
+</ul></li>
+<li><p>Search for the ftp-deploy code (from <a href="https://github.com/marketplace">github marker</a>: ftp, deploy sort:popularity-desc)</p>
+<ul>
+<li>Code the git actions for each yml files (each branch separately) .</li>
+</ul>
+<!-- -->
+<ul>
+<li>Use model: FTP Deploy, By SamKirkland. Automate deploying websites and more with this GitHub action via FTP and FTPS. 2.7k stars. <a href="https://github.com/marketplace/actions/ftp-deploy">FTP Deploy</a> (SamKirkland)</li>
+</ul></li>
+</ol>
+<div class="sourceCode" id="cb26"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span><span class="at"> push</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> 🚀 Deploy website on push</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">web-deploy</span><span class="kw">:</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> 🎉 Deploy</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> 🚚 Get latest code</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> 📂 Sync files</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> SamKirkland/FTP-Deploy-Action@v4.3.4</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">server</span><span class="kw">:</span><span class="at"> ftp.samkirkland.com</span></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">username</span><span class="kw">:</span><span class="at"> myFtpUserName</span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">password</span><span class="kw">:</span><span class="at"> ${{ secrets.ftp_password }}</span></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Modify code to:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> main</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> 🚀 Deploy website on push</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">web-deploy</span><span class="kw">:</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> 🎉 Deploy</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> 🚚 Get latest code</span></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> 📂 Sync files</span></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> SamKirkland/FTP-Deploy-Action@v4.3.4</span></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">server</span><span class="kw">:</span><span class="at"> ftp.example.com</span></span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">username</span><span class="kw">:</span><span class="at"> ${{ secrets.ftp_username }}</span></span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">password</span><span class="kw">:</span><span class="at"> ${{ secrets.ftp_password }}</span></span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a><span class="co">#        server-dir: /public_html/LSmicro.prosth2.com # domain or subdomain</span></span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">local-dir</span><span class="kw">:</span><span class="at"> ./docs/</span></span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">remote-dir</span><span class="kw">:</span><span class="at"> ./public_html/lsmicro/</span><span class="co"> # or subdomain folder</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Perhaps this code will be better. C-GPT: write an ftp deploy code for github actions.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> FTP Deploy</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> main</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">web-deploy</span><span class="kw">:</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> 🎉 Deploy</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout Repository</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> FTP Deploy</span></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> SamKirkland/FTP-Deploy-Action@v4.3.4</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">server</span><span class="kw">:</span><span class="at"> ftp.example.com</span></span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">username</span><span class="kw">:</span><span class="at"> ${{ secrets.FTP_USERNAME }}</span></span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">password</span><span class="kw">:</span><span class="at"> ${{ secrets.FTP_PASSWORD }}</span></span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">local-dir</span><span class="kw">:</span><span class="at"> ./docs</span></span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">remote-dir</span><span class="kw">:</span><span class="at"> /public_html/docs</span><span class="co"> # or subdomain folder</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Alternatively, in python. C-GPT: write ftp deploy code for the docs folder.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ftplib <span class="im">import</span> FTP</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># FTP server credentials</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>ftp_host <span class="op">=</span> <span class="st">"ftp.example.com"</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>ftp_username <span class="op">=</span> <span class="st">"your_ftp_username"</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>ftp_password <span class="op">=</span> <span class="st">"your_ftp_password"</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Local path to the "docs" folder</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>local_path <span class="op">=</span> <span class="st">"/path/to/docs"</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Remote path on the FTP server where the "docs" folder will be uploaded</span></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>remote_path <span class="op">=</span> <span class="st">"/public_html/docs"</span></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to upload a directory and its contents recursively</span></span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> upload_directory(ftp, local_dir, remote_dir):</span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> os.path.exists(local_dir):</span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span></span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>    ftp.cwd(remote_dir)</span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> item <span class="kw">in</span> os.listdir(local_dir):</span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>        local_item <span class="op">=</span> os.path.join(local_dir, item)</span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> os.path.isfile(local_item):</span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>            <span class="cf">with</span> <span class="bu">open</span>(local_item, <span class="st">"rb"</span>) <span class="im">as</span> f:</span>
+<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a>                ftp.storbinary(<span class="st">"STOR "</span> <span class="op">+</span> item, f)</span>
+<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> os.path.isdir(local_item):</span>
+<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a>            ftp.mkd(item)</span>
+<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a>            upload_directory(ftp, local_item, item)</span>
+<span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a>    ftp.cwd(<span class="st">".."</span>)</span>
+<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-31"><a href="#cb29-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Connect to the FTP server</span></span>
+<span id="cb29-32"><a href="#cb29-32" aria-hidden="true" tabindex="-1"></a>ftp <span class="op">=</span> FTP(ftp_host)</span>
+<span id="cb29-33"><a href="#cb29-33" aria-hidden="true" tabindex="-1"></a>ftp.login(user<span class="op">=</span>ftp_username, passwd<span class="op">=</span>ftp_password)</span>
+<span id="cb29-34"><a href="#cb29-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-35"><a href="#cb29-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Upload the "docs" folder recursively</span></span>
+<span id="cb29-36"><a href="#cb29-36" aria-hidden="true" tabindex="-1"></a>upload_directory(ftp, local_path, remote_path)</span>
+<span id="cb29-37"><a href="#cb29-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-38"><a href="#cb29-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Close the FTP connection</span></span>
+<span id="cb29-39"><a href="#cb29-39" aria-hidden="true" tabindex="-1"></a>ftp.quit()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><p>If repository not yet created:</p>
+<ul>
+<li><p>Create git ripo</p></li>
+<li><p><a href="https://gist.github.com/loretoparisi/95bdcc9a59936f732dccdfd37f202dde">github quick setup</a>, ` git init » git add. »</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"first commit"</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/my_github/myrepo.git</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin master</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Git will sync files and forlders. (first commit will fail).</li>
+<li>Go to git » Actions. first commit will fail… because secrets are not define.</li>
+</ul></li>
+</ul>
+<h4 id="set-github-secrets" class="anchored">Set github secrets</h4>
+<ul>
+<li><p>Define secrets, go // Settings » Secrets and variables » Actions » New repository secret » (create 2 secrets)…</p>
+<ul>
+<li>Secret 1
+<ul>
+<li><p>Name: ftp_username</p></li>
+<li><p>Value: yourusername ex. lsmicro or u567637261.lsmicro ?</p>
+<p>u567637261.descsimp.online ?</p></li>
+<li><p>Add secret</p></li>
+</ul></li>
+<li>Secret 2
+<ul>
+<li>Name: ftp_password</li>
+<li>Value: yourpass word (for ftp) ex.　 LSmicro23</li>
+<li>Add secret</li>
+</ul></li>
+</ul></li>
+<li><p>Go Actions again » © first commit » © Re-run jobs » Re-run all jobs</p></li>
+<li><p>Click on deploy to see all details.</p></li>
+<li><p>Create a new branches.</p>
+<ul>
+<li>Git create branch “Staging” ????</li>
+<li>Return to master/main <code>checkout to master</code> ? (allways retun to master/main to create new branches.</li>
+<li><code>git crate branch newfeature</code> ???</li>
+<li>modify/add code to page…</li>
+<li><code>git add .</code></li>
+<li><code>git commit -m "new feature"</code></li>
+<li><code>git push origin newfeature</code></li>
+<li>Go back to github repo » Actions… Here no update was performed because changes are updated only when pushed to master/main or staging (here we are pushing to “newfeature”</li>
+<li>Change branch form newfeature to stagin <code>git checkout staging</code></li>
+<li>Merge newfeature for staging branch</li>
+<li>While in “staging” branch <code>git merge newfeature</code></li>
+<li><code>git push origin staging</code></li>
+<li>Now in github acction the update/sync/deployed will be shown.</li>
+</ul></li>
+<li><p>Add modify code as needed. Add, commit, and push to staging. If the new feature is completed and finally approved, merge with master/main branch.</p></li>
+<li><p>Check more ftp <a href="https://github.com/marketplace/actions/ftp-deploy#settings">options</a></p></li>
+</ul></li>
+</ul>
+<ol start="4" type="1">
+<li>If r</li>
+</ol>
+</section>
+<section id="create-ftp-account" class="level4">
+<h4 class="anchored" data-anchor-id="create-ftp-account">Create FTP account</h4>
+<iframe src="https://scribehow.com/embed/How_to_Create_an_FTP_Account_and_Upload_using_Filezilla__oGdlCRLXSVaDAL_xl76QhA" width="100%" height="640" allowfullscreen="" frameborder="0"></iframe>
+<p><a href="https://scribehow.com/shared/How_to_Create_an_FTP_Account_and_Upload_using_Filezilla__oGdlCRLXSVaDAL_xl76QhA">How to create an FTP Account access</a> and upload using ….</p>
+<p>Active hostname: <a href="ftp://u567637261.lsmicro@ftp.descsimp.online/">&nbsp;ftp.descsimp.online</a></p>
+<p>Directory: /home/u567637261/domains/descsimp.online/public_html/lsmicro</p>
+<p>Username: u567637261.lsmicro</p>
+<p>username: lsmicro</p>
+<p>Pass: LSmicro23</p>
+<p>How to Move a Domain Between Different Hostinger Accounts</p>
+<ol type="1">
+<li><p>Domains:</p>
+<ul>
+<li>prostho2.com</li>
+<li>descsimp.online</li>
+<li>prostho2.hostingerapp.com (old, deprecated)</li>
+<li>websitein.hol.es (old, deprecated)</li>
+</ul></li>
+<li><p>Sub-domains:</p>
+<ul>
+<li>lsmicro.prostho2.com: (/home/u567637261/domains/prostho2.com/public_html/LSmicro)</li>
+<li>lsmicro.descsimp.com: (/home/u567637261/domains/descsimp.online/public_html/LSmicro)</li>
+</ul></li>
+<li><p>FTP Accounts:</p>
+<ul>
+<li>descsimp:
+<ol type="1">
+<li><p>FTP Access:</p>
+<p>FTP IP: ftp://31.220.106.221</p>
+<p>FTP hostname: ftp://prostho2.hostingerapp.com</p>
+<p>FTP username: u567637261.descsimp.online</p>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td>FTP IP</td>
+<td>ftp://31.220.106.221</td>
+</tr>
+<tr class="even">
+<td>FTP hostname</td>
+<td>ftp://prostho2.hostingerapp.com</td>
+</tr>
+<tr class="odd">
+<td>FTP username</td>
+<td>u567637261.descsimp.online</td>
+</tr>
+<tr class="even">
+<td>FTP port</td>
+<td>21</td>
+</tr>
+<tr class="odd">
+<td>Folder to upload files</td>
+<td>public_html</td>
+</tr>
+<tr class="even">
+<td>Forgot your FTP password?</td>
+<td><strong>Change FTP password</strong></td>
+</tr>
+<tr class="odd">
+<td>Recommended FTP clients</td>
+<td><a href="http://www.smartftp.com/"><strong>SmartFTP</strong></a>or<a href="http://filezilla-project.org/"><strong>FileZilla</strong></a></td>
+</tr>
+</tbody>
+</table></li>
+<li><p>hostname: <a href="ftp://u567637261.lsmicro@ftp.descsimp.online/">ftp.descsimp.online</a></p>
+<p>directory:　/home/u567637261/domains/descsimp.online/public_html/lsmicro</p>
+<p>username: u567637261.lsmicro</p>
+<p>Password: LSmicro23</p></li>
+<li></li>
+</ol></li>
+</ul></li>
+<li><p>GIT (Dashboard / advanced)</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th><strong>Repository</strong></th>
+<th><strong>Branch</strong></th>
+<th><strong>Install Path</strong></th>
+<th><strong>Actions</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://github.com/MarceloRosales/descSPIM_LSmicro.git" class="uri">https://github.com/MarceloRosales/descSPIM_LSmicro.git</a></td>
+<td>main</td>
+<td>/public_html/lsmicro/</td>
+<td><ol type="1">
+<li><strong>Deploy</strong></li>
+<li><strong>View latest build output</strong></li>
+<li><strong>Auto Deployment</strong></li>
+</ol></td>
+</tr>
+</tbody>
+</table></li>
+</ol>
+</section>
+<section id="deploy-from-github-repository" class="level4">
+<h4 class="anchored" data-anchor-id="deploy-from-github-repository"><strong>Deploy from GitHub repository</strong></h4>
+<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/UCNGbAUnbgg" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<ol type="1">
+<li>Hostinger » Advanced » GIT</li>
+<li>Create new repository:
+<ul>
+<li>Repository: https://github.com/MarceloRosales/descSPIM_LSmicro.git or git@github.com:MarceloRosales/descSPIM_LSmicro.git</li>
+<li>Branch: main</li>
+<li>Directory: LSmicro</li>
+</ul></li>
+<li>Create directory in hostinger “/public_html/lsmicro/” (make sure dir is empty)</li>
+<li>Add ssh key (before clicking deploy button)
+<ol type="1">
+<li>Generate SSH key</li>
+<li>Copy key</li>
+<li></li>
+</ol></li>
+<li>Go back to github » Settings » deploy keys » add deploy key » paste key » add title: lsmicro »
+<ul>
+<li>Un-check <code>Allow write access</code> (i want just to copy files to deploy only hostinger) »</li>
+<li>© Add key</li>
+<li>SSH <strong>hostinger-descsimp.online</strong> <code>SHA256:hVtC0LQ00kEpo2alhWxaxDbhz0vM/+7jJ1hDQyvweo8</code></li>
+</ul></li>
+<li>Go back to hostinger Git » Manage Repositories » © deploy » Yes</li>
+<li>Enable Automated deployments:
+<ul>
+<li>click on “Auto deployment”</li>
+<li>Copy the webhook URL » © setup webhook on Github » …[github » settings » Webhooks »]…</li>
+<li>Paste URL in “Payload URL” » © Add webhook</li>
+</ul></li>
+<li>Now everytime you push content to github it wll automatically be deployed.</li>
+</ol>
+</section>
+<section id="end" class="level4">
+<h4 class="anchored" data-anchor-id="end">End</h4>
+</section>
+<section id="core-shell-01" class="level2">
+<h2 class="anchored" data-anchor-id="core-shell-01">Core-shell 01</h2>
+<p>Now I am going to recreate the whole process in one go from scratch.</p>
+<p>FTPtest01:</p>
+<p>Note: it is easyer to create the repository in github first and then clone it to local (but it is better to know the process of creating the page first and then connecting to the github).</p>
+<p>Requirements before starting:</p>
+<ol type="1">
+<li>Have a web hosting service (now using <a href="https://www.hostinger.com/">Hostinger</a>.com ~80$y )</li>
+<li>Have a domain
+<ol type="1">
+<li><p>prostho2.com, 3 years, ID: 169kGMTjEV0XCrNF</p>
+<p>Auto-renew on, Renewal date: 2026-06-09</p>
+<p>price: $10 (first year), Renewal price: $45.51…? (not ~$15?)</p></li>
+<li><p>descsimp.online, 1 year, ID: Azq9UZTivX2bpNrZ0</p>
+<p>Auto-renew off, Expiration date: 2024-07-04</p>
+<p>price: $1 (first year), Renewal price $35.17</p></li>
+</ol></li>
+</ol>
+<p>Main steps:</p>
+<ol type="1">
+<li>Create quarto website (local) repo</li>
+<li>Create github repo.</li>
+<li>Connect local and github repo</li>
+<li>Create sub-domain in Hostinger (with sub-folder)</li>
+<li>Create new ftp account in Hostinger</li>
+<li>Delete all files in sub-folder</li>
+<li>Set GitHub secrets</li>
+<li>Create Git Actions / workflows (deploy &amp; control)</li>
+<li>Render and Test actions</li>
+</ol>
+<p>Description:</p>
+<ol type="1">
+<li><p>create quarto (local) repo</p>
+<ol type="1">
+<li><p>file new project » New directory » Quarto website » FTPtest01; ©create git repo; ©use renv for this project » create project</p></li>
+<li><p>Open the _quarto.yml » in “project” type: <code>output-dir: docs</code></p>
+<p>or… for fast deployment copy/paste <code>_quarto.yml template 04</code>.</p></li>
+<li><p>Create scss files for theme and theme-dark options Copy/paste file:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>scss_files <span class="ot">&lt;-</span> <span class="st">"/Users/marcelorosales/Box Sync/Github/QuartoFiles"</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">system</span>(<span class="fu">paste</span>(<span class="st">"open"</span>, <span class="fu">shQuote</span>(scss_files)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>To avoid the light-box filter error, install the lightbox extension inside the project folder itself. It is required for function of lightbox. (see Complete Lightbox Example post for more details)</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add quarto-ext/lightbox</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Better Not Render project to create the website until the end, normally a _site folder will is created but we changed output-dir: docs, so /docs folder will created instead and will be used to deploy the site in github.</p></li>
+</ol></li>
+<li><p>create github repo.</p>
+<ol type="1">
+<li>New repository » FPTtest01 » ©public » create repository
+<ul>
+<li><p>git ignore files: R,</p></li>
+<li><p>Add <code>/_site/</code> to .gitignore after creating the file</p></li>
+<li><p>Add a .nojekyll file</p>
+<p>to the root of your repository that tells GitHub Pages not to do additional processing of your published site using Jekyll (the GitHub default site generation tool). see: <strong>Quarto-GitHub Pages</strong></p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> .nojekyll</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Add other files or dir as necessary</p></li>
+</ul></li>
+<li>Settings » Pages » Branch: main; /docs » save</li>
+<li>set address in About (info) Got to // Code » code » clone » htpps (copy github page address)</li>
+</ol></li>
+<li><p>connect local and github repo <a href="https://gist.github.com/loretoparisi/95bdcc9a59936f732dccdfd37f202dde">github quick setup</a>.</p>
+<ol type="1">
+<li><p>in github » code » copy https address » https://github.com/name/FTPtst01.git</p></li>
+<li><p>In terminal:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/MarceloRosales/FPTtest01.git</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="co"># error: src refspec main does not match any</span></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="co"># error: failed to push some refs to 'https://github.com/MarceloRosales/FPTtest01.git'</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="co"># This is (probably) because there is no previous commits to match with.</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"fist commit"</span></span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a><span class="co"># git pull</span></span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a><span class="co"># git branch --set-upstream-to=origin/main     </span></span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">--set-upstream</span> origin main</span>
+<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config pull.rebase false    </span>
+<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-f</span> origin main <span class="co">#this seems to solve the probelm</span></span>
+<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a><span class="co">#  ----- may not need this code</span></span>
+<span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-24"><a href="#cb34-24" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull    </span>
+<span id="cb34-25"><a href="#cb34-25" aria-hidden="true" tabindex="-1"></a><span class="co"># There is no tracking information for the current branch.</span></span>
+<span id="cb34-26"><a href="#cb34-26" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb34-27"><a href="#cb34-27" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"second commit"</span></span>
+<span id="cb34-28"><a href="#cb34-28" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push  </span>
+<span id="cb34-29"><a href="#cb34-29" aria-hidden="true" tabindex="-1"></a><span class="co"># fatal: The current branch main has no upstream branch.</span></span>
+<span id="cb34-30"><a href="#cb34-30" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">--set-upstream</span> origin main</span>
+<span id="cb34-31"><a href="#cb34-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-32"><a href="#cb34-32" aria-hidden="true" tabindex="-1"></a><span class="co"># add text and render </span></span>
+<span id="cb34-33"><a href="#cb34-33" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb34-34"><a href="#cb34-34" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"second commit"</span></span>
+<span id="cb34-35"><a href="#cb34-35" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push  </span>
+<span id="cb34-36"><a href="#cb34-36" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status </span>
+<span id="cb34-37"><a href="#cb34-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-38"><a href="#cb34-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Success!!!!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol>
+<p>Comments:</p>
+<p>new github repo message:</p>
+<p>Quick setup — if you’ve done this kind of thing before or</p>
+<p>https://github.com/MarceloRosales/FPTtest01.git</p>
+<p>Get started by creating a new file or uploading an existing file. We recommend every repository include a README, LICENSE, and .gitignore.</p>
+<p>…or create a new repository on the command line</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"# FPTtest01"</span> <span class="op">&gt;&gt;</span> README.md</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add README.md</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"first commit"</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/MarceloRosales/FPTtest01.git</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>…or push an existing repository from the command line</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/MarceloRosales/FPTtest01.git</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>…or import code from another repository</p>
+<p>You can initialize this repository with code from a Subversion, Mercurial, or TFS project.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/github01.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/github01.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div></li>
+<li><p>create subdomain in hostinger.</p>
+<p>Home » Premium Web Hosting » Manage » ©[descsimp.online] » ˇDomains » Subdomains » Enter Subdomain: <code>Sub_name</code> » ©Custom folder for subdomain: <code>Sub_name</code> » Create</p></li>
+<li><p>create a new ftp account in hostinger</p>
+<p>Home » Premium Web Hosting » Manage » ©[descsimp.online] » ˇFiles » FTP Accounts » Create a new FTP Account » Directory: /public_html/<code>Sub_name/</code> » Username: <code>Sub_name</code> » Password: LSmicro23 » Create</p>
+<ul>
+<li>Username: ResearchNotes; A愛2</li>
+</ul></li>
+<li><p>subfolder is created in hostinger with a php file, with manager delete all files and make sure is empty</p></li>
+<li><p>Set secrets in github</p>
+<ol type="1">
+<li>Define secrets, go // Settings » Secrets and variables » Actions » New repository secret » (create 2 secrets)…
+<ol type="1">
+<li>FTP_username (lsmicro or u567637261.lsmicro ?
+<ol type="1">
+<li>u567637261.descsimp.online ?</li>
+<li>u567637261.FTPtest01</li>
+<li>u567637261.ResearchNotes</li>
+</ol></li>
+<li>FTP_password
+<ol type="1">
+<li>LSmicro23</li>
+<li>"</li>
+<li>A愛２</li>
+</ol></li>
+</ol></li>
+</ol></li>
+<li><p>Create Git Actions / workflows (deploy &amp; control yml)</p>
+<p>This link here <a href="https://docs.github.com/en/actions/quickstart#creating-your-first-workflow">creating your first workfolow</a> was the key to unlock the problems of FTP deployment. There is a demo to check if actions are working.</p>
+<ol type="1">
+<li><p>create folder .github/workflows/</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> .github/workflows/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Create ftpdeploy.yml (set server: ftptest01.descsimp.online [subdomain!!] and change remote-dir: …)</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> .github/workflows/</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> ftpdeploy.yml github-actions-demo.yml</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="co"># for serial files</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co"># touch file_name{0001..0003}.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> 🚀 FTP Deploy</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> main</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">web-deploy</span><span class="kw">:</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> 🎉 Deploy</span></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout Repository</span></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> FTP Deploy</span></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> SamKirkland/FTP-Deploy-Action@v4.3.4</span></span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">server</span><span class="kw">:</span><span class="at"> ftptest01.descsimp.online</span><span class="co"> # Subdomain name. !!NOT: FTP Accouns » Active hostname.. See:  //Hosting » Dashboard » Domains » Subdomains » List of current subdomains</span></span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">username</span><span class="kw">:</span><span class="at"> ${{ secrets.FTP_USERNAME }}</span><span class="co"> # Set in github  </span></span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">password</span><span class="kw">:</span><span class="at"> ${{ secrets.FTP_PASSWORD }}</span><span class="co"> # Set in github  </span></span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">local-dir</span><span class="kw">:</span><span class="at"> ./docs/</span></span>
+<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">remote-dir</span><span class="kw">:</span><span class="at"> ./public_html/FTPtest01/</span><span class="co"> # or subdomain folder</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Create github-actions-demo.yml as control…</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> GitHub Actions Demo</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">run-name</span><span class="kw">:</span><span class="at"> ${{ github.actor }} is testing out GitHub Actions 🚀</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">push</span><span class="kw">]</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">Explore-GitHub-Actions</span><span class="kw">:</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">run</span><span class="kw">:</span><span class="at"> echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."</span></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">run</span><span class="kw">:</span><span class="at"> echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"</span></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">run</span><span class="kw">:</span><span class="at"> echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."</span></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Check out repository code</span></span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">run</span><span class="kw">:</span><span class="at"> echo "💡 The ${{ github.repository }} repository has been cloned to the runner."</span></span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">run</span><span class="kw">:</span><span class="at"> echo "🖥️ The workflow is now ready to test your code on the runner."</span></span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> List files in the repository</span></span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a><span class="fu">        run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>          ls ${{ github.workspace }}</span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">run</span><span class="kw">:</span><span class="at"> echo "🍏 This job's status is ${{ job.status }}."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>render and commit</p></li>
+</ol></li>
+<li><p>Check actions in github. Actions » All workflows » FTP Deploy (green check means success!!)</p></li>
+<li><p>Save all and start pages content.</p></li>
+<li><p>To create a blog:</p>
+<ol type="1">
+<li><p>Add the menu in the navbar section of the _quarto.yml file</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> blog.qmd</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"Blog"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Create blog.qmd file and a posts folder.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> blog.qmd  </span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> posts </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>In the blog.qmd file add the head yml code:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Blog"</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">listing</span><span class="kw">:</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> posts</span><span class="co"> # Contents will be taken from the posts folder</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sort</span><span class="kw">:</span><span class="at"> </span><span class="st">"date desc"</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">categories</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="fu">page-layout</span><span class="kw">:</span><span class="at"> full</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="co">#margin-header: signup.html</span></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a><span class="fu">title-block-banner</span><span class="kw">:</span><span class="at"> </span><span class="st">"#EDF3F9"</span></span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a><span class="fu">title-block-banner-color</span><span class="kw">:</span><span class="at"> body</span></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a><span class="fu">search</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This file is the the “main page” or “landing page” for the blogs.</p>
+<p>All subsequent blog files need to be saved in the posts folder.The yml in this file will direct to the folder and the way is displayed.　 In other words, the yml section, the listing for this page comes from the contents in the folder posts…“contents: posts”</p>
+<p>Q: For organization convenience… Can I place this landing page file directly into the posts folder? No, the posts will be displayed in this page.</p></li>
+<li><p>Each blog post should have the proper yaml heading:</p>
+<ol type="1">
+<li><p>Create a .qmd file within the /posts folders.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> posts</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> file_name.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Simple example:</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Minimal post"</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"Post description"</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Marcelo Rosales"</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2023/03/13"</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="fu">categories</span><span class="kw">:</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> news</span></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> code</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> analysis</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Example with lightbox filters, and html format</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Complete Lightbox Example"</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"How to use Lightbox"</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Marcelo Rosales"</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2023/03/13"</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="fu">categories</span><span class="kw">:</span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> photos</span></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> lightbox</span></span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> gallelry</span></span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a><span class="fu">filters</span><span class="kw">:</span></span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> lightbox</span></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a><span class="fu">lightbox</span><span class="kw">:</span></span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">match</span><span class="kw">:</span><span class="at"> auto</span></span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">effect</span><span class="kw">:</span><span class="at"> fade</span></span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">desc-position</span><span class="kw">:</span><span class="at"> right</span></span>
+<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">loop</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a><span class="co">#  css-class: "my-css-class" #only if custom css file exists. </span></span>
+<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb46-18"><a href="#cb46-18" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb46-19"><a href="#cb46-19" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-fold</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb46-20"><a href="#cb46-20" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-copy</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb46-21"><a href="#cb46-21" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-overflow</span><span class="kw">:</span><span class="at"> wrap</span></span>
+<span id="cb46-22"><a href="#cb46-22" aria-hidden="true" tabindex="-1"></a><span class="fu">Editor</span><span class="kw">:</span><span class="at"> Source </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>There are also specific templates, ex. Jolla template:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Jolla template"</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"quarto templates"</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Marcelo Rosales"</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2023/03/16"</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="fu">categories</span><span class="kw">:</span></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> quarto</span></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> code</span></span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> templates</span></span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a><span class="fu">about</span><span class="kw">:</span></span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">id</span><span class="kw">:</span><span class="at"> hero-heading</span></span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">template</span><span class="kw">:</span><span class="at"> jolla</span></span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">image</span><span class="kw">:</span><span class="at"> images/img01.png</span></span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">links</span><span class="kw">:</span></span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">icon</span><span class="kw">:</span><span class="at"> twitter</span></span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">text</span><span class="kw">:</span><span class="at"> twitter</span></span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">href</span><span class="kw">:</span><span class="at"> https://twitter.com</span></span>
+<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">icon</span><span class="kw">:</span><span class="at"> github</span></span>
+<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Github</span></span>
+<span id="cb47-20"><a href="#cb47-20" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">href</span><span class="kw">:</span><span class="at"> https://github.com</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li></li>
+</ol></li>
+</ol></li>
+<li><p>l</p></li>
+<li></li>
+</ol>
+</section>
+<section id="other-references" class="level2">
+<h2 class="anchored" data-anchor-id="other-references">Other References:</h2>
+<p><a href="https://support.hostinger.com/en/articles/1583249-how-to-manage-dns-records-at-hostinger">How to manage DNS Records at Hostinger</a></p>
+<p><a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">Managing a custom domain for your GitHub Pages site</a></p>
+<p><a href="https://www.top10.com/hosting/domainhosting-comparison?utm_source=google&amp;kw=free%20domains%20for%20websites&amp;c=555475907721&amp;t=search&amp;p=&amp;m=e&amp;adpos=&amp;dev=c&amp;devmod=&amp;mobval=0&amp;network=g&amp;campaignid=12443712194&amp;groupid=128338773029&amp;targetid=kwd-5659967906&amp;interest=&amp;physical=1009355&amp;feedid=&amp;a=17&amp;ts=hi&amp;topic=&amp;test=&amp;clicktype=&amp;gclid=Cj0KCQjwho-lBhC_ARIsAMpgMofKm8C1UX9qKdao8xPsNDgM7JEXsS-XxD_fIjQ4pjTmBghIlXLgnJUaAqe_EALw_wcB">Compare the Best Domain Hosting of 2023</a></p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p></p><div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/W70fWpcHMzc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div> <a href="https://youtu.be/W70fWpcHMzc" target="_blank">Auto Deploy Github Project into cPanel Shared Hosting With Github Actions CI/CD</a><p></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p></p><div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/g4iUkNQnH_g" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div> <a href="https://youtu.be/g4iUkNQnH_g" data-targe="_blank">How To Use Git Version Control in cPanel | Git Tutorial by Web Hosting Canada</a><p></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p></p><div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/Mt7k8rPiKCs" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div> <a href="https://youtu.be/Mt7k8rPiKCs" target="_blank">How To Implement GitHub Actions To Your Workflows (With React &amp; cPanel)</a><p></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p></p><div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/xjPkD0aXyPs" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div> <a href="https://youtu.be/xjPkD0aXyPs" target="_blank">Automatic Deployments On Shared Hosting</a><p></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p></p><div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/p-AU1pA4kKY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div> <a href="https://youtu.be/p-AU1pA4kKY" target="_blank">Hostinger Redirects: How Do I Redirect with Hostinger using hpanel?</a><p></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p></p><div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/3PTIJbZDBes" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div> <a href="https://youtu.be/3PTIJbZDBes" target="_blank">(02) Setup Ftp Details For Automation | Build CI/CD pipeline with GitHub Actions</a><p></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p>How to create an FTP account in Hostinger and upload with Filezilla?</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p></p><div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/KdZt-H1bvTg" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div> <a href="https://youtu.be/KdZt-H1bvTg" target="_blank">How to create an FTP account in Hostinger and upload with Filezilla?</a><p></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p></p><div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/UNWIXYSZfZY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div> <a href="https://youtu.be/UNWIXYSZfZY" target="_blank">Deploy to shered hosting using github actions</a><p></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p></p><div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/l4IdCG3Gq6U" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div> <a href="https://youtu.be/l4IdCG3Gq6U" target="_blank">Hostinger PRO Panel: Make money and Manage Your Clients’ Websites Easily</a><p></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p> <a href="" target="_blank"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p> <a href="" target="_blank"></a></p>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"openEffect":"fade","loop":true,"descPosition":"right","closeEffect":"fade","selector":".lightbox"});</script>
+
+
+
+</body></html>

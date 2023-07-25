@@ -12,8 +12,8 @@ title-block-banner-color: body
 search: false
 ---
 
-This file is the the "main page" or "landing page" for the blogs.
+This file is the "main page" or "landing page" for the blogs.
 
-All subsequent blog files need to be saved in the posts folder.The yml in this file will direct to the folder and the way is displayed.　 In other words, the yml section, the listing for this page comes from the contents in the folder posts..."contents: posts"
+All subsequent blog files need to be saved in the `/posts` folder.The yml code in this file will direct to the assign folder and the way is displayed as well.　 In other words, the posts listing for this page comes from the contents in the `/posts` folder ..."contents: posts"
 
 Q: For organization convenience... Can I place this landing page file directly into the posts folder? No, the posts will be displayed in this page.

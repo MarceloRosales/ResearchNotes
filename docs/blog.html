@@ -72,9 +72,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -101,10 +101,10 @@ ul.task-list li input[type="checkbox"] {
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Site_name - Blog">
-<meta property="og:description" content="This file is the the “main page” or “landing page” for the blogs.">
+<meta property="og:description" content="This file is the “main page” or “landing page” for the blogs.">
 <meta property="og:site-name" content="Site_name">
 <meta name="twitter:title" content="Site_name - Blog">
-<meta name="twitter:description" content="This file is the the “main page” or “landing page” for the blogs.">
+<meta name="twitter:description" content="This file is the “main page” or “landing page” for the blogs.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -204,15 +204,15 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="gallelry">gallelry <span class="quarto-category-count">(1)</span></div><div class="category" data-category="lightbox">lightbox <span class="quarto-category-count">(1)</span></div><div class="category" data-category="photos">photos <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="gallelry">gallelry <span class="quarto-category-count">(2)</span></div><div class="category" data-category="lightbox">lightbox <span class="quarto-category-count">(2)</span></div><div class="category" data-category="photos">photos <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
-<p>This file is the the “main page” or “landing page” for the blogs.</p>
-<p>All subsequent blog files need to be saved in the posts folder.The yml in this file will direct to the folder and the way is displayed.　 In other words, the yml section, the listing for this page comes from the contents in the folder posts…“contents: posts”</p>
+<p>This file is the “main page” or “landing page” for the blogs.</p>
+<p>All subsequent blog files need to be saved in the <code>/posts</code> folder.The yml code in this file will direct to the assign folder and the way is displayed as well.　 In other words, the posts listing for this page comes from the contents in the <code>/posts</code> folder …“contents: posts”</p>
 <p>Q: For organization convenience… Can I place this landing page file directly into the posts folder? No, the posts will be displayed in this page.</p>
 
 
@@ -220,7 +220,14 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="photos,lightbox,gallelry" data-listing-date-sort="1689174000000" data-listing-file-modified-sort="1690302323550" data-listing-reading-time-sort="4.785">
+<div class="quarto-post image-right" data-index="0" data-categories="photos,lightbox,gallelry" data-listing-date-sort="1689174000000" data-listing-file-modified-sort="1690306310751" data-listing-reading-time-sort="4.99">
+<div class="thumbnail">
+<a href="./posts/Quarto_blog.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/Quarto_blog.html"></a></p>
+</div>
 <div class="body">
 <a href="./posts/Quarto_blog.html">
 <h3 class="no-anchor listing-title">
@@ -249,6 +256,47 @@ gallelry
 </div>
 <div class="metadata">
 <a href="./posts/Quarto_blog.html">
+<div class="listing-date">
+Jul 13, 2023
+</div>
+<div class="listing-author">
+Marcelo Rosales
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="photos,lightbox,gallelry" data-listing-date-sort="1689174000000" data-listing-file-modified-sort="1690307684183" data-listing-reading-time-sort="59.155">
+<div class="thumbnail">
+<p><a href="./posts/FPT_deploy.html"> <img src="./posts/images/github01.png" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/FPT_deploy.html">
+<h3 class="no-anchor listing-title">
+Quarto Blog
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('photos'); return false;">
+photos
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('lightbox'); return false;">
+lightbox
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('gallelry'); return false;">
+gallelry
+</div>
+</div>
+<a href="./posts/FPT_deploy.html">
+<div class="listing-description">
+<p>Quick start for quarto</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/FPT_deploy.html">
 <div class="listing-date">
 Jul 13, 2023
 </div>

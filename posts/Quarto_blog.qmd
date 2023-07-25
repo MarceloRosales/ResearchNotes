@@ -23,6 +23,16 @@ format:
 Editor: Source 
 ---
 
+Prerequisite:
+
+To avoid the light-box filter error, install the lightbox extension inside the project folder itself. It is required for function of lightbox. (see Complete Lightbox Example post for more details)
+
+````         
+``` bash
+quarto add quarto-ext/lightbox
+```
+````
+
 To create a blog page in Quarto:
 
 1.  Add the menu in the navbar section of the \_quarto.yml file
