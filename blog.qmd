@@ -1,0 +1,19 @@
+---
+title: "Blog"
+listing:
+  contents: posts # Contents will be taken from the posts folder
+  sort: "date desc"
+  type: default
+  categories: true
+page-layout: full
+#margin-header: signup.html
+title-block-banner: "#EDF3F9"
+title-block-banner-color: body
+search: false
+---
+
+This file is the the "main page" or "landing page" for the blogs.
+
+All subsequent blog files need to be saved in the posts folder.The yml in this file will direct to the folder and the way is displayed.　 In other words, the yml section, the listing for this page comes from the contents in the folder posts..."contents: posts"
+
+Q: For organization convenience... Can I place this landing page file directly into the posts folder? No, the posts will be displayed in this page.
