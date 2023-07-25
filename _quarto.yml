@@ -106,10 +106,11 @@ format:
 #    tbl-colwidths: [40, 60]  # tables column withs 40% and 60%
   docx: default
 
-# filters:
-#   - lightbox #this section is for the managing img as galleries
+
+filters: 
+  - lightbox # requires install of extension inside the project See "Complete Lightbox Example" post $quarto add quarto-ext/lightbox
 lightbox:
-  match: auto
+  match: auto #this section is for the managing img as galleries
 
 # editor: source
 # editor_options:

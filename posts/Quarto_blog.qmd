@@ -1,6 +1,6 @@
 ---
-title: "Complete Lightbox Example"
-description: "How to use Lightbox"
+title: "Quarto Blog"
+description: "Quick start for quarto"
 author: "Marcelo Rosales"
 date: "2023/03/13"
 categories:
@@ -8,7 +8,7 @@ categories:
   - lightbox
   - gallelry
 filters:
-  - lightbox
+  - lightbox # requires install of extension inside the project See "Complete Lightbox Example" post $quarto add quarto-ext/lightbox
 lightbox:
   match: auto
   effect: fade

@@ -12,5 +12,12 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n\nCode\n1 + 1\n\n\n[1] 2"
+  },
+  {
+    "objectID": "posts/Quarto_blog.html",
+    "href": "posts/Quarto_blog.html",
+    "title": "Quarto Blog",
+    "section": "",
+    "text": "To create a blog page in Quarto:\n\nAdd the menu in the navbar section of the _quarto.yml file\n      - href: blog.qmd\n        text: \"Blog\"\nCreate blog.qmd file and a posts folder.\ntouch blog.qmd  \nmkdir posts \nIn the blog.qmd file add the head yml code:\ntitle: \"Blog\"\nlisting:\n  contents: posts # Contents will be taken from the posts folder\n  sort: \"date desc\"\n  type: default\n  categories: true\npage-layout: full\n#margin-header: signup.html\ntitle-block-banner: \"#EDF3F9\"\ntitle-block-banner-color: body\nsearch: false\nThis file is the the “main page” or “landing page” for the blogs.\nAll subsequent blog files need to be saved in the posts folder.The yml in this file will direct to the folder and the way is displayed.　 In other words, the yml section, the listing for this page comes from the contents in the folder posts…“contents: posts”\nQ: For organization convenience… Can I place this landing page file directly into the posts folder? No, the posts will be displayed in this page.\nEach blog post should have the proper yaml heading:\n\nCreate a .qmd file within the /posts folders.\ncd posts\ntouch file_name.qmd\nSimple example:\ntitle: \"Minimal post\"\ndescription: \"Post description\"\nauthor: \"Marcelo Rosales\"\ndate: \"2023/03/13\"\ncategories:\n  - news\n  - code\n  - analysis\nExample with lightbox filters, and html format\ntitle: \"Complete Lightbox Example\"\ndescription: \"How to use Lightbox\"\nauthor: \"Marcelo Rosales\"\ndate: \"2023/03/13\"\ncategories:\n  - photos\n  - lightbox\n  - gallelry\nfilters:\n  - lightbox\nlightbox:\n  match: auto\n  effect: fade\n  desc-position: right\n  loop: true\n#  css-class: \"my-css-class\" #only if custom css file exists. \nformat: \n  html: \n    code-fold: true\n    code-copy: true\n    code-overflow: wrap\nEditor: Source \nThere are also specific templates, ex. Jolla template:\ntitle: \"Jolla template\"\ndescription: \"quarto templates\"\nauthor: \"Marcelo Rosales\"\ndate: \"2023/03/16\"\ncategories:\n  - quarto\n  - code\n  - templates\n\nabout:\n  id: hero-heading\n  template: jolla\n  image: images/img01.png\n  links:\n    - icon: twitter\n      text: twitter\n      href: https://twitter.com\n    - icon: github\n      text: Github\n      href: https://github.com\n\n\nAdd content"
   }
 ]
