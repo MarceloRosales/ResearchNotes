@@ -1,19 +1,121 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "ReseachNotes"
+  title: "Site_name"
+  image: "" # where this images goes?
+  favicon: "" # Browsers' tab icon (uni logo)
+  open-graph: true 
+  twitter-card: true 
+  search: true 
+
   navbar:
+    background: light
+    logo: ""
+    logo-alt: ""
+    logo-href: ""
+    collapse-below: lg
+    
     left:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: "Home"
+      - href: about.qmd
+        text: "About"
+      - href: blog.qmd
+        text: "Blog"
+  
+      - text: "Software"   
+        menu: 
+          - text: "RStudio"
+            href: "" # Ex. files/Software/RStudio/Rstudio.qmd 
+          - text: "ImageJ"
+            href: "" 
+          - text: "Analyze12"
+            href: ""
+
+      - text: "NavSubmenu"
+        menu:
+          - text: "Notes"
+            href: ""
+          - text: "Report a Bug"
+            icon: "bug"
+            href: ""
+          - text: "Ask a Question"
+            icon: "chat-right-text"
+            href: "https://github.com/quarto-dev/quarto-cli/discussions"
+          - text: "FAQ"
+            icon: "question-circle"
+            href: ""
+
+    right: 
+      - icon: github
+        href: "https://marcelorosales.github.io/descSPIM_LSmicro/"
+#        text: Quarto GitHub
+      - icon: rss
+        href: https://quarto.org/docs/blog/index.xml
+
+  sidebar:
+    - id: RStudio 
+      title: "Get Started with the RStudio"
+      style: "floating"
+      collapse-level: 3
+      align: left
+      contents:  
+        - text: R Studio
+          href: "" # ex. files/Software/RStudio/index.qmd  
+        - text: "Install"
+          href: ""
+
+    - id: ImageJ 
+      title: "Get Started with ImageJ"
+      style: "floating"
+      collapse-level: 3
+      align: left
+      contents:  
+        - text: "Install"
+          href: ""
+        - text: "ImgJ Packade"
+          href: ""
+        - text: "Git try"
+          href: ""
+
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    fontsize: ""  # "5"
     toc: true
+    toc-depth: 6
+    theme:
+      light: [cosmo, theme.scss]
+      dark: [cosmo, theme-dark.scss] # change theme (cosmo) colors and formats in the scss files
+    code-copy: true
+    code-fold: true
+    code-overflow: wrap
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+#    code-line-numbers: true
+    code-link: true
+    css: styles.css
+#    include-after-body: js.html
+#    self-contained: false # If true, it will not create the site files but one html file. 
+#    grid:
+#      sidebar-width: 250px
+#      body-width: 900px
+#      margin-width: 300px
+#    tbl-colwidths: [40, 60]  # tables column withs 40% and 60%
+  docx: default
 
-editor: visual
+# filters:
+#   - lightbox #this section is for the managing img as galleries
+lightbox:
+  match: auto
+
+# editor: source
+# editor_options:
+#   markdown:
+#     canonical: true
+
+#execute: 
+#  freeze: auto  # This prevent R, Python, and Julia code is only executed locally,
 
