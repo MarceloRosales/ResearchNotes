@@ -1,0 +1,281 @@
+---
+title: "R&D Notation"
+description: "Intro to Quarto"
+author: "Marcelo Rosales"
+date: "2023/07/13"
+categories:
+  - Website
+  - Quarto
+  - Notation
+filters:
+  - lightbox # requires install of extension inside the project See "Complete Lightbox Example" post $quarto add quarto-ext/lightbox
+lightbox:
+  match: auto
+  effect: fade
+  desc-position: right
+  loop: true
+#  css-class: "my-css-class" #only if custom css file exists. 
+format: 
+  html: 
+    code-fold: true
+    code-copy: true
+    code-overflow: wrap
+Editor: Source 
+---
+
+## Quarto
+
+This is a Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+The choice between using Quarto and simple R Markdown depends on the specific needs and requirements of your project. Here are a few reasons why you might consider using Quarto:
+
+1.  Enhanced functionality: Quarto offers additional features and functionality compared to simple R Markdown. It provides support for literate programming, version control, customizable templates, and more. If you require advanced capabilities for your project, such as generating reports with complex formatting, incorporating interactive elements, or integrating code and documentation seamlessly, Quarto can be a powerful tool.
+
+2.  Document generation and collaboration: Quarto is designed for collaborative document generation, making it easier for teams to work together on projects. It provides features like automated rendering, document caching, and document diffing, which can facilitate collaboration and streamline the document development process.
+
+3.  Extensibility: Quarto allows for extensibility through custom engines, allowing you to integrate additional programming languages or document formats into your project. This flexibility can be beneficial if you need to incorporate non-R code or work with specific document formats beyond what simple R Markdown offers.
+
+4.  Community and support: Quarto has an active community of users and developers who contribute to its development and provide support. If you encounter any issues or have questions, you can rely on community resources to find assistance and guidance.
+
+However, it's important to note that simple R Markdown is still a powerful and widely used tool for generating documents with R. If your project requirements are straightforward and don't require the additional features provided by Quarto, using simple R Markdown may be sufficient and more straightforward. Ultimately, the choice between Quarto and simple R Markdown should be based on your specific project needs, preferences, and the complexity of the document you aim to generate.
+
+### Intent
+
+**Problem 1: Notebook keeping.**
+
+Experimental notes are distributed in many different folders and files; sometimes even in different drives and it is difficult to **keep track** of all information. A centralized direct access to information at any time is required.
+
+The standard way to do it is by using Microsoft Office programs
+
+Word:\
+Pros:
+
+-   Best way to manage "tables" within text editor.
+-   Inter-compatibility with word, excel, ppt and other programs.
+-   Easy to send and collaborate with others.
+-   The Standard for all purposes.
+
+Cons:
+
+-   File size gets too big very fast.
+-   images and links slows down computer.
+-   Files are scatter all around different folders, hard to manage.
+-   No easy way to compile information across projects and experiments.
+
+**Problem 2: Software and code management.**
+
+-   Code management is a serious problem, word cannot manage it at all.
+-   
+
+Software:
+
+-   brew to install all research software.
+-   MS Office
+-   R and RStudio
+-   VS Code
+-   Quarto
+-   Zotero
+-   Anaconda
+-   Git
+-   GitHub
+-   Git Kraken
+-   ImageJ
+-   Calibre
+-   DigiKam
+-   Docker?
+-   Syncthing
+-   FreeCad
+-   Blender
+
+> Small digression: Think on the possibility of a centrilized Folder for all notes, word, r, qmd, pyton, bash, and using symlinks to move and compile projects (like a puzzle) to create new content.
+
+> Why I am changeing to quarto?
+
+## Solutions:
+
+**key Shortcuts**: Files: Excel best tricks.xlsx; Markdown02.docx
+
+### Notekeeping:
+
+**1. Save all notes in one place.**
+
+/Users/marcelorosales/Box Sync/Niigata Uni Box/Books-Notes/Notes, then symlik to other projects.
+
+-   Does symlinks work with github, syncthing, synology, host (hostinger), etc?
+-   Which type of symlik is best? soft or hard?
+
+**2. Files and folders:**
+
+/Users/marcelorosales/Box Sync/Github
+
+-   DotFiles: What are dotfiles? To create executable file to install all programs ex. [brew.sh](/Users/marcelorosales/Box%20Sync/Github/DotFiles/CMSs%20dotfiles/CMdotfiles-master/brew.sh) and settings at once with one executable command.
+    -   conda shells
+    -   iTerm: Fonts
+-   GitBooks: What are Gitbooks?
+-   mkdocs
+-   NiigataU-Carving: html
+-   Quarto (VS and R)
+-   Rstudio: Shared files among devices
+-   Visual Studio Code
+
+/Users/marcelorosales/Box Sync/Documents/R
+
+-   Course01-R Programming A-Z
+-   Course02- R Programing - Advanced Analitics
+-   R Bookdown
+-   R Example scripts
+-   R exmple df
+-   R external sources
+-   R package files
+-   R Preferences and packages
+-   Rmarkdown
+-   Tests forlder
+-   Working Directory
+
+MBP20 files: /Users/marcelorosales/Documents/GitHub:
+
+-   **Bioinformatics_RNA-seq** (Gitbook)\*\*
+-   **Carving** (HTML web page made entirely manually)
+-   DotFiles (Empty) x
+-   Example (Hugo Site trial01, empty) x
+-   Img (RNA analysis image samples)
+-   Mkdocs_books (Trial site with 1 symlink file from /Box Sync/Github/mkdocs/bs4_LabNotes/ \_book/08-Preparation.md) \*
+-   mkdocs_Tests (Trial of submenus in mkdocs) x
+-   MkDocsTest1 (Trial of mkdocs multilingual feature, VS_code,md, MkDocs,md) \*
+-   Quarto:
+-   **quarto-tip-a-day** (webpage downloaded from quarto site)
+-   **quarto-trials:**
+    -   quarto_blog
+    -   quarto_book
+    -   quarto_project
+    -   **quarto_website** (Quarto page test01, <https://marcelorosales.github.io/Quarto_website_test01/>) +++
+-   **quarto-web** (Downloaded entire quarto web site)
+-   Research_Experiments:
+    -   PhotoConvertibleCells (Example only, no content)
+-   Research_Notebook: (Experiment Notebooks, All reseach Notes, <https://marcelorosales.github.io/Research_Notebook/> )
+-   Retrolog (Hugo lithium) x
+-   Temptests (RNA Seq for STAT3 example of RNA sequencing) \*\*
+-   VS Code (VS code cheat sheets) \*
+-   ZdocTest1 (Zdoc-blogdown test) x
+-   zipfiles
+-   Hugotree.docx
+-   Research_Notebook.Rmd (Research Notes, Research Notebook) \*\*
+
+MBP15 files:
+
+Synology files:
+
+Github pages:
+
+MarceloRosales/MkDocsTest1\
+MarceloRosales/Research_Notebook\
+MarceloRosales/mkd_LabNotes\
+MarceloRosales/Bioinformatics_RNA-seq\
+MarceloRosales/NiigataU-SV\
+MarceloRosales/Carving\
+MarceloRosales/MarceloRosales ¿???\
+MarceloRosales/PCC-Experiment\
+MarceloRosales/RBD02\
+MarceloRosales/NiigataU-Carving\
+MarceloRosales/RBlogdowntest01\
+MarceloRosales/WebDev-01\
+MarceloRosales/BootstrapCarrousel\
+MarceloRosales/staticrypt
+
+MkDocsTest1 <https://marcelorosales.github.io/MkDocsTest1/MkDocs/>\
+Research_Notebook <https://marcelorosales.github.io/Research_Notebook/>\
+mkd_LabNotes <https://marcelorosales.github.io/mkd_LabNotes/>\
+Bioinformatics_RNA-seq <https://marcelorosales.github.io/Bioinformatics_RNA-seq/>\
+NiigataU-SV <https://marcelorosales.github.io/NiigataU-SV/>\
+Carving <https://marcelorosales.github.io/Carving/>\
+MarceloRosales ¿?? PCC-Experiment <https://marcelorosales.github.io/PCC-Experiment/>\
+RBD02 <https://marcelorosales.github.io/RBD02/> A minimal book ex.\
+NiigataU-Carving <https://marcelorosales.github.io/NiigataU-Carving/>\
+RBlogdowntest01 (not live) WebDev-01 <https://marcelorosales.github.io/WebDev-01/>\
+BootstrapCarrousel <https://marcelorosales.github.io/BootstrapCarrousel/>\
+Staticrypt (exec only)
+
+|                                       |     |                                                                                   |
+|------------------|------------------|------------------------------------|
+| MarceloRosales/MkDocsTest1            | \>  | MkDocsTest1 <https://marcelorosales.github.io/MkDocsTest1/MkDocs/>                |
+| MarceloRosales/Research_Notebook      | \>  | Research_Notebook <https://marcelorosales.github.io/Research_Notebook/>           |
+| MarceloRosales/mkd_LabNotes           | \>  | mkd_LabNotes <https://marcelorosales.github.io/mkd_LabNotes/>                     |
+| MarceloRosales/Bioinformatics_RNA-seq | \>  | Bioinformatics_RNA-seq <https://marcelorosales.github.io/Bioinformatics_RNA-seq/> |
+| MarceloRosales/NiigataU-SV            | \>  | NiigataU-SV <https://marcelorosales.github.io/NiigataU-SV/>                       |
+| MarceloRosales/Carving                | \>  | Carving <https://marcelorosales.github.io/Carving/>                               |
+| MarceloRosales/MarceloRosales ¿???    | \>  | \<MarceloRosales ¿??\>                                                            |
+| MarceloRosales/PCC-Experiment         | \>  | PCC-Experiment <https://marcelorosales.github.io/PCC-Experiment/>                 |
+| MarceloRosales/RBD02                  | \>  | RBD02 \<https://marcelorosales.github.io/RBD02/ A minimal book ex.\>              |
+| MarceloRosales/NiigataU-Carving       | \>  | NiigataU-Carving <https://marcelorosales.github.io/NiigataU-Carving/>             |
+| MarceloRosales/RBlogdowntest01        | \>  | \<RBlogdowntest01 (not live)\>                                                    |
+| MarceloRosales/WebDev-01              | \>  | WebDev-01 <https://marcelorosales.github.io/WebDev-01/>                           |
+| MarceloRosales/BootstrapCarrousel     | \>  | BootstrapCarrousel <https://marcelorosales.github.io/BootstrapCarrousel/>         |
+| MarceloRosales/staticrypt             | \>  | \<Staticrypt (exec only)\>                                                        |
+
+#### How to use:
+
+Where do I write the text first? word, Rstudio .qmd, VS code?
+
+1.  I am thinking I will I will use the 3 of them (word, RStudio (RS).qmd, VS code (VSC)) at the same time.
+2.  Seems like VC code is the middle ground between word and Rstudio. 20230502 test: Use VS code as the main text/code editor, then copy paste to word.
+    1.  Create a qmd file/project in RS, git init, save project.
+    2.  Open RS qmd file in VS code and use as main text editor.
+    3.  Change/add content, save in VS code \> will auto update in RS (no need to do anything except to reload/open file).
+    4.  Check if render is correct.
+    5.  Copy/paste to word and save in word. Currently it is not possible to open a word file directly in VSC.
+3.  Use word and **.qmd (in source mode only)** at the same time and indistinctively...
+4.  DO NOT SWITCH TO VISUAL MODE. Changing to visual mode will modify text in the source code format. Space between lines is doble and there is no way to change it in the ui of rstudio, only in the render output. It makes it difficult to read and orginize.
+5.  Thus, keep all records in the word file at all times. Make de word file the default saving format.
+6.  Open Untitled .qmd files to try and test code chunks or formats.
+7.  Open an Image .qmd file **in visual mode** to store all image code and links for a fast gallery, then easy to copy/paste images to other places.
+8.  If large code needs to be quickly formated for word (coz copy/paste from rstudio to word directly does not copy code highlight formats), use VS code, copy/paste Rstudio \> VS Code \> word. Then adjust line spacing.
+
+#### Open Word file
+
+(See Markdown02.docx \> Word and Rstudio for detail info on the code)
+
+files:
+
+Mac:
+
+```{r}
+#| eval: false
+
+Markdown02 <- "/Users/marcelorosales/Box Sync/Niigata Uni Box/Books-Notes/Notes/Markdown02.docx"  
+
+Research_map <- "/Users/marcelorosales/Box Sync/Niigata Uni Box/Books-Notes/Notes/Research_map and guide.docx"  
+
+Markdown01 <- "/Users/marcelorosales/Box Sync/Niigata Uni Box/Books-Notes/Notes/Markdown01.docx"
+
+Notes <- "/Users/marcelorosales/Box Sync/Niigata Uni Box/Books-Notes/Notes/"
+
+excel <- "/Users/marcelorosales/Documents/GitHub/Quarto/quarto-trials/quarto_website/test.xlsx"
+
+#open in mac OS
+system(paste("open", shQuote(Markdown02)))
+system(paste("open", shQuote(Research_map)))
+system(paste("open", shQuote(Notes)))
+system(paste("open", shQuote(excel)))
+```
+
+[excel file test](test.xlsx)
+
+Windows:
+
+```{r}
+#| eval: false
+file_path <- "/Users/marcelorosales/Box Sync/Niigata Uni Box/Books-Notes/Notes/Markdown01.docx"
+shell(paste("start", shQuote(file_path)))
+# or 
+system(paste("start", shQuote(file_path)))
+
+```
+
+```{r filename="Rmd"}
+#| eval: false
+
+excel <- "/Users/marcelorosales/Documents/GitHub/Quarto/quarto-trials/quarto_website/test.xlsx"
+system(paste("open", shQuote(excel)))
+```

@@ -1,12 +1,14 @@
 ---
-title: "Quarto Blog"
-description: "Quick start for quarto"
+title: "Q website FPT deploy"
+description: "How to FPT deploy a website to hostinger"
 author: "Marcelo Rosales"
 date: "2023/07/13"
 categories:
-  - photos
-  - lightbox
-  - gallelry
+  - FPT
+  - Website
+  - Deploy
+  - Hostinger
+  - Tutorial
 filters:
   - lightbox # requires install of extension inside the project See "Complete Lightbox Example" post $quarto add quarto-ext/lightbox
 lightbox:
@@ -103,19 +105,19 @@ project:
   output-dir: docs
 ```
 
-\_quarto.yml simple template-01:
+quarto.yml simple template-01:
 
-``` {#_quarto.yml template-01: .yaml}
+``` yaml
 project:
   type: website
   output-dir: docs
 
 website:
   title: "Site_name"
-  image: "images/img01.png" # where this images goes?. only works with specifit themes?...
+  image: "" # where this images goes?
   favicon: "images/favicon.png" # Small icon in the bewbrowser tab (ex. uni logo)
   open-graph: true #https://quarto.org/docs/websites/website-tools.html, https://www.youtube.com/watch?v=QwEQKM4YRnU&t=2s
-  #twitter-card: true #https://quarto.org/docs/websites/website-tools.html#twitter-cards
+  #twitter-card: true
   search: true 
   
   navbar:
@@ -138,6 +140,7 @@ format:
     code-block-bg: true
     code-block-border-left: "#31BAE9"
 #    code-line-numbers: true
+
     css: styles.css
 #    include-after-body: js.html
 #    self-contained: false # If true, it will not create the site files but one html file. 
@@ -148,14 +151,12 @@ format:
 #    tbl-colwidths: [40, 60]  # tables column withs 40% and 60%
   docx: default
 
-
 editor: visual
-
 ```
 
-\_quarto.yml simple template-02:
+quarto.yml simple template-02:
 
-``` {#_quarto.yml template-02: .yaml}
+``` yaml
 project:
   type: website
   output-dir: docs
@@ -220,12 +221,11 @@ format:
       margin-width: 300px
 
 editor: source
-
 ```
 
-\_quarto.yml template-03:
+quarto.yml template-03:
 
-``` {#_quarto.yml template-03: .yaml}
+``` yaml
 project:
   type: website
   output-dir: docs
@@ -237,6 +237,7 @@ website:
   open-graph: true #https://quarto.org/docs/websites/website-tools.html, https://www.youtube.com/watch?v=QwEQKM4YRnU&t=2s
   #twitter-card: true #https://quarto.org/docs/websites/website-tools.html#twitter-cards
   search: true 
+
   navbar:
     background: light # this is the color option of the nav bg, but I set color in format: with theme.scss. # Options:`primary`, `secondary`, `success`, `danger`, `warning`, `info`, `light`, `dark`
     logo: "images/nav_img.png" # logo in nav bar.
@@ -251,7 +252,8 @@ website:
         href: about.qmd
       - text: "All Notes"
         href: All_notes.qmd
-      - text: "Software"   #  href: files/Software/index.qmd # Dropdown menu can not have lading page. 
+
+      - text: "Software"   
         menu: 
           - text: "RStudio"
             href: files/Software/RStudio/index.qmd # when inputing index.qmd doesnt work. Try other file and retry.
@@ -274,6 +276,7 @@ website:
           - text: "FAQ"
             icon: "question-circle"
 #            href: docs/faq/index.qmd
+
     right: 
       - icon: github
         href: https://github.com/quarto-dev/quarto-cli
@@ -293,7 +296,7 @@ website:
         - text: "Install"
           href: files/Software/RStudio/R_install.qmd  
         - text: "R Packages"
-          href: files/Software/RStudio/R_Packages.qmd
+          href: ""
 
     - id: ImageJ 
       title: "Get Started with ImageJ"
@@ -323,6 +326,7 @@ format:
     code-block-bg: true
     code-block-border-left: "#31BAE9"
 #    code-line-numbers: true
+
     css: styles.css
     include-after-body: js.html
     self-contained: false # If true, it will not create the site files but one html file. 
@@ -332,8 +336,9 @@ format:
       margin-width: 300px
 #    tbl-colwidths: [40, 60]  # tables column withs 40% and 60%
 
+
 filters:
-  - lightbox # requires install of extension inside the project See "Complete Lightbox Example" post $quarto add quarto-ext/lightbox
+  - lightbox #this section is for the managing img as galleries
 lightbox:
   match: auto
 
@@ -346,7 +351,7 @@ editor_options:
 #  freeze: auto  # This prevent R, Python, and Julia code is only executed locally,
 ```
 
-\_quarto.yml template-04 (comprehensive):
+quarto.yml template-04 (comprehensive):
 
 ``` yaml
 project:
@@ -462,10 +467,10 @@ filters:
 lightbox:
   match: auto
 
-# editor: source
-# editor_options:
-#   markdown:
-#     canonical: true
+editor: source
+editor_options:
+  markdown:
+    canonical: true
 
 #execute: 
 #  freeze: auto  # This prevent R, Python, and Julia code is only executed locally,
@@ -1288,13 +1293,13 @@ How to Move a Domain Between Different Hostinger Accounts
 
 4.  GIT (Dashboard / advanced)
 
-    +----------------------------------------------------------+--------------+-----------------------+----------------------------------+
-    | **Repository**                                           | **Branch**   | **Install Path**      | **Actions**                      |
-    +==========================================================+==============+=======================+==================================+
-    | <https://github.com/MarceloRosales/descSPIM_LSmicro.git> | main         | /public_html/lsmicro/ | 1.  **Deploy**                   |
-    |                                                          |              |                       | 2.  **View latest build output** |
-    |                                                          |              |                       | 3.  **Auto Deployment**          |
-    +----------------------------------------------------------+--------------+-----------------------+----------------------------------+
+    +----------------------------------------------------------+-------------+-----------------------+----------------------------------+
+    | **Repository**                                           | **Branch**  | **Install Path**      | **Actions**                      |
+    +==========================================================+=============+=======================+==================================+
+    | <https://github.com/MarceloRosales/descSPIM_LSmicro.git> | main        | /public_html/lsmicro/ | 1.  **Deploy**                   |
+    |                                                          |             |                       | 2.  **View latest build output** |
+    |                                                          |             |                       | 3.  **Auto Deployment**          |
+    +----------------------------------------------------------+-------------+-----------------------+----------------------------------+
 
 #### **Deploy from GitHub repository**
 
@@ -1507,7 +1512,7 @@ Description:
             3.  u567637261.ResearchNotes
         2.  FTP_password
             1.  LSmicro23
-            2.  \"
+            2.  "
             3.  A愛２
 
 8.  Create Git Actions / workflows (deploy & control yml)
@@ -1707,11 +1712,10 @@ Description:
 
 [Compare the Best Domain Hosting of 2023](https://www.top10.com/hosting/domainhosting-comparison?utm_source=google&kw=free%20domains%20for%20websites&c=555475907721&t=search&p=&m=e&adpos=&dev=c&devmod=&mobval=0&network=g&campaignid=12443712194&groupid=128338773029&targetid=kwd-5659967906&interest=&physical=1009355&feedid=&a=17&ts=hi&topic=&test=&clicktype=&gclid=Cj0KCQjwho-lBhC_ARIsAMpgMofKm8C1UX9qKdao8xPsNDgM7JEXsS-XxD_fIjQ4pjTmBghIlXLgnJUaAqe_EALw_wcB)
 
-::: {layout-ncol=3}
-
+::: {layout-ncol="3"}
 {{< video https://youtu.be/W70fWpcHMzc >}} [Auto Deploy Github Project into cPanel Shared Hosting With Github Actions CI/CD](https://youtu.be/W70fWpcHMzc){target="_blank"}
 
-{{< video https://youtu.be/g4iUkNQnH_g >}} [How To Use Git Version Control in cPanel | Git Tutorial by Web Hosting Canada](https://youtu.be/g4iUkNQnH_g){targe="_blank"}
+{{< video https://youtu.be/g4iUkNQnH_g >}} [How To Use Git Version Control in cPanel \| Git Tutorial by Web Hosting Canada](https://youtu.be/g4iUkNQnH_g){targe="_blank"}
 
 {{< video https://youtu.be/Mt7k8rPiKCs >}} [How To Implement GitHub Actions To Your Workflows (With React & cPanel)](https://youtu.be/Mt7k8rPiKCs){target="_blank"}
 
@@ -1719,7 +1723,7 @@ Description:
 
 {{< video https://youtu.be/p-AU1pA4kKY >}} [Hostinger Redirects: How Do I Redirect with Hostinger using hpanel?](https://youtu.be/p-AU1pA4kKY){target="_blank"}
 
-{{< video https://youtu.be/3PTIJbZDBes >}} [(02) Setup Ftp Details For Automation | Build CI/CD pipeline with GitHub Actions](https://youtu.be/3PTIJbZDBes){target="_blank"}
+{{< video https://youtu.be/3PTIJbZDBes >}} [(02) Setup Ftp Details For Automation \| Build CI/CD pipeline with GitHub Actions](https://youtu.be/3PTIJbZDBes){target="_blank"}
 
 How to create an FTP account in Hostinger and upload with Filezilla?
 
@@ -1729,8 +1733,7 @@ How to create an FTP account in Hostinger and upload with Filezilla?
 
 {{< video https://youtu.be/l4IdCG3Gq6U >}} [Hostinger PRO Panel: Make money and Manage Your Clients' Websites Easily](https://youtu.be/l4IdCG3Gq6U){target="_blank"}
 
-{{< >}} [](){target="_blank"}
+{{< >}}
 
-{{< >}} [](){target="_blank"}
-
+{{< >}}
 :::

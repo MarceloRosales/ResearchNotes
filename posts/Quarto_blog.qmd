@@ -4,9 +4,9 @@ description: "Quick start for quarto"
 author: "Marcelo Rosales"
 date: "2023/07/13"
 categories:
-  - photos
-  - lightbox
-  - gallelry
+  - Website
+  - Blog
+  - Posts
 filters:
   - lightbox # requires install of extension inside the project See "Complete Lightbox Example" post $quarto add quarto-ext/lightbox
 lightbox:
@@ -27,11 +27,9 @@ Prerequisite:
 
 To avoid the light-box filter error, install the lightbox extension inside the project folder itself. It is required for function of lightbox. (see Complete Lightbox Example post for more details)
 
-````         
 ``` bash
 quarto add quarto-ext/lightbox
 ```
-````
 
 To create a blog page in Quarto:
 
@@ -135,7 +133,7 @@ To create a blog page in Quarto:
         about:
           id: hero-heading
           template: jolla
-          image: images/img01.png
+          # image: images/img01.png
           links:
             - icon: twitter
               text: twitter
