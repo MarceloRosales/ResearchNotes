@@ -20,69 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -158,10 +95,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link" href="./about.html">
  <span class="menu-text">About</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./blog.html">
- <span class="menu-text">Blog</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-software" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Software</span>
@@ -187,6 +120,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <li class="dropdown-header">FAQ</li>
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./blog.html">
+ <span class="menu-text">Blog</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
@@ -213,7 +150,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#about-research-notes" id="toc-about-research-notes" class="nav-link active" data-scroll-target="#about-research-notes">About Research Notes</a></li>
+  <li><a href="#why-i-am-using-quarto" id="toc-why-i-am-using-quarto" class="nav-link" data-scroll-target="#why-i-am-using-quarto">Why I am using Quarto?</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -237,17 +181,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <p>This is a Quarto website.</p>
 <p>To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
+<section id="about-research-notes" class="level2">
+<h2 class="anchored" data-anchor-id="about-research-notes">About Research Notes</h2>
+<p>The purpose of research lab notes is to document and record the details of scientific experiments, observations, procedures, and results conducted in a laboratory setting. Lab notes play a crucial role in the research process and serve several important purposes:</p>
+<p>1. Record Keeping: Lab notes act as an organized and chronological record of all activities and experiments carried out in the lab. They provide a detailed account of what was done, when it was done, and the outcomes obtained.</p>
+<p>2. Reproducibility: Clear and comprehensive lab notes allow other researchers or team members to replicate and validate the experiments or procedures conducted in the lab. This ensures the reproducibility of research findings, which is essential for establishing the credibility of scientific work.</p>
+<p>3. Intellectual Property Protection: Lab notes serve as a contemporaneous record of ideas, methodologies, and findings. In some cases, they can help establish the originality and ownership of intellectual property, such as inventions or novel discoveries.</p>
+<p>4. Troubleshooting and Analysis: If unexpected results or issues arise during an experiment, lab notes can provide critical information for troubleshooting and identifying potential sources of error.</p>
+<p>5. Collaborative Research: Lab notes facilitate collaboration among researchers and team members. They enable seamless communication of methods, data, and progress, even if team members are working in different locations or at different times.</p>
+<p>6. Ethical Compliance: In regulated fields or when conducting experiments involving human or animal subjects, maintaining detailed lab notes is essential for ensuring ethical compliance and demonstrating due diligence.</p>
+<p>7. Publication and Grants: Well-documented lab notes provide a basis for writing research papers, grant proposals, and reports. They support the validity and rigor of the research presented in these documents.</p>
+<p>8. Future Reference: Lab notes serve as a reference for future research projects, allowing researchers to build upon their previous work and avoid repeating unsuccessful or redundant experiments.</p>
+<p>9. Auditing and Quality Assurance: In academic and industrial settings, lab notes may be subject to audits and quality assurance checks. Proper documentation helps ensure that research is conducted in accordance with standard operating procedures and regulatory requirements.</p>
+<p>10. Personal Learning: For individual researchers, lab notes can aid in personal learning and self-improvement. They provide an opportunity for reflection, learning from mistakes, and refining experimental techniques.</p>
+<p>Overall, maintaining accurate, detailed, and organized lab notes is a fundamental practice in scientific research. It is not only essential for scientific integrity and credibility but also serves as a valuable resource for the researcher and the broader scientific community.</p>
+</section>
+<section id="why-i-am-using-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="why-i-am-using-quarto">Why I am using Quarto?</h2>
+<p>Quarto is a powerful and user-friendly software designed to streamline and enhance the process of creating and sharing technical documents. It offers a wide range of benefits for authors, researchers, educators, and professionals alike. With Quarto, you can effortlessly create beautifully formatted documents that seamlessly integrate code, data visualizations, and rich media elements.</p>
+<p>Key benefits of using Quarto software include:</p>
+<p>1. Versatility: Quarto supports multiple output formats, such as HTML, PDF, ePub, and more, allowing you to create documents that are accessible and viewable on various devices and platforms.</p>
+<p>2. Code Integration: Quarto seamlessly integrates code from various programming languages, enabling you to combine executable code and explanatory text in a single document. This feature is particularly beneficial for data analysis, research papers, and technical documentation.</p>
+<p>3. Interactive Visualizations: Quarto supports interactive data visualizations, making it easy to create dynamic charts, graphs, and interactive elements that engage your readers and enhance their understanding of complex information.</p>
+<p>4. Version Control: Quarto is Git-friendly, allowing you to track changes, collaborate with others, and manage document versions efficiently. This feature is ideal for team projects and collaborative writing.</p>
+<p>5. Extensive Markdown Support: Quarto supports Markdown, a lightweight markup language, making it easy to write and format content with minimal effort. Markdown is widely used and offers a straightforward syntax for formatting text.</p>
+<p>6. LaTeX Compatibility: For those who require advanced typesetting capabilities, Quarto supports LaTeX, a high-quality typesetting system. This ensures that you can produce professional-looking documents with complex mathematical equations and symbols.</p>
+<p>7. Automated Publishing: Quarto automates the publishing process, enabling you to generate multiple output formats from a single source file with ease. This saves time and ensures consistency across different versions of your document.</p>
+<p>8. Customizable Templates: Quarto provides customizable templates, allowing you to create documents with a unique look and feel, tailored to your brand or personal preferences.</p>
+<p>In summary, Quarto empowers users to create sophisticated and interactive documents effortlessly, combining code, data, and multimedia elements in a cohesive and visually appealing manner. Whether you’re a researcher, educator, or professional, Quarto simplifies the document creation process, elevating the impact and accessibility of your work.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

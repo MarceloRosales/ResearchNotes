@@ -22,8 +22,6 @@ website:
         text: "Home"
       - href: about.qmd
         text: "About"
-      - href: blog.qmd
-        text: "Blog"
   
       - text: "Software"   
         menu: 
@@ -47,6 +45,10 @@ website:
           - text: "FAQ"
             icon: "question-circle"
             href: ""
+
+      - href: blog.qmd
+        text: "Blog"
+
 
     right: 
       - icon: github

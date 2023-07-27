@@ -2,7 +2,9 @@
 title: "Quarto Blog"
 description: "Quick start for quarto"
 author: "Marcelo Rosales"
-date: "2023/07/13"
+date: "2023/07/13"  # Publication date, also can use: today, but changes when updated
+date-meta: "2023/07/20"  # Date of document creation or last modification. It is not shown in render
+date-modified: last-modified
 categories:
   - Website
   - Blog
@@ -23,7 +25,7 @@ format:
 Editor: Source 
 ---
 
-Prerequisite:
+### Prerequisite:
 
 To avoid the light-box filter error, install the lightbox extension inside the project folder itself. It is required for function of lightbox. (see Complete Lightbox Example post for more details)
 
@@ -31,7 +33,7 @@ To avoid the light-box filter error, install the lightbox extension inside the p
 quarto add quarto-ext/lightbox
 ```
 
-To create a blog page in Quarto:
+## To create a blog page in Quarto:
 
 1.  Add the menu in the navbar section of the \_quarto.yml file
 
@@ -78,13 +80,14 @@ To create a blog page in Quarto:
         touch file_name.qmd
         ```
 
-    2.  Simple example:
+    2.  Minimal example:
 
         ``` yaml
         title: "Minimal post"
         description: "Post description"
         author: "Marcelo Rosales"
         date: "2023/03/13"
+        date-modified: last-modified
         categories:
           - news
           - code
@@ -97,7 +100,9 @@ To create a blog page in Quarto:
         title: "Complete Lightbox Example"
         description: "How to use Lightbox"
         author: "Marcelo Rosales"
-        date: "2023/03/13"
+        date: "2023/07/26"  # Publication date, also can use: today, but changes when updated
+        date-meta: "2023/07/20"  # Date of document creation or last modification. It is not shown in render
+        date-modified: last-modified
         categories:
           - photos
           - lightbox
@@ -124,7 +129,9 @@ To create a blog page in Quarto:
         title: "Jolla template"
         description: "quarto templates"
         author: "Marcelo Rosales"
-        date: "2023/03/16"
+        date: "2023/07/26"  # Publication date, also can use: today, but changes when updated
+        date-meta: "2023/07/20"  # Date of document creation or last modification. It is not shown in render
+        date-modified: last-modified
         categories:
           - quarto
           - code

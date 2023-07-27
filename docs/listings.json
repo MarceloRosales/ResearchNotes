@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/Sidebar_menu.html",
       "/posts/Quarto_blog.html",
       "/posts/R&D_Notation.html",
       "/posts/FPT_deploy.html"

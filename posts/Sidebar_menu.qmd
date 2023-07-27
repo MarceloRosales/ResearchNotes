@@ -1,0 +1,177 @@
+---
+title: "Sidebar menu"
+description: "Sidebar menu for documentation"
+author: "Marcelo Rosales"
+date: "2023/07/28"  # Publication date, also can use: today, but changes when updated
+date-meta: "2023/07/28"  # Date of document creation or last modification. It is not shown in render
+date-modified: last-modified
+categories:
+  - Website
+  - Blog
+  - Posts
+  - Sidebar
+  - menu
+  - quarto
+filters:
+  - lightbox # requires install of extension inside the project See "Complete Lightbox Example" post $quarto add quarto-ext/lightbox
+lightbox:
+  match: auto
+  effect: fade
+  desc-position: right
+  loop: true
+#  css-class: "my-css-class" #only if custom css file exists. 
+format: 
+  html: 
+    code-fold: true
+    code-copy: true
+    code-overflow: wrap
+Editor: Source 
+---
+
+## Adding a Sidebar
+
+To Create a side bar for a specific page within a main drop-down menu:
+
+::: callout-important
+If there is only one sidebar id, the sidebar will be displayed in all the pages and menus regardless of their location.
+
+To Create a sidebar for a specific page 2 or more sidebar id's are required
+:::
+
+1.  In the \_quarto.yml file create the drop-down menu.
+
+    ``` yaml
+    website:
+      navbar:
+
+        left:
+          - text: "Home"
+          - text: "dropdown" # drop-down menu name   
+            menu: 
+              - text: "Section1_name"
+                href: files/dropdown/section1_name/landing_page1.qmd 
+              - text: "Section2_name"
+                href: files/dropdown/section2_name/landing_page2.qmd # most be named index.qmd? or any name ok?
+    ```
+
+2.  In the \_quarto.yml file create the sidebar and id for the page.
+
+    1.  If only one sidebar id, then sidebar will be displayed in all pages.
+
+    2.  If 2 or more sidebar id's, then it will be displayed only in the specified page.
+
+    ``` yaml
+      sidebar:
+        - id: section1_name 
+          title: "Get Started with the docs"
+          style: "floating"
+          collapse-level: 3
+          align: left
+          contents:  
+            - text: "Section Intro"
+              href: files/dropdown/section1_name/landing_page1.qmd  
+            - text: "Doc 1"
+              href: files/dropdown/section1_name/doc1.qmd  
+            - text: "Doc 2"
+              href: files/dropdown/Section1_name/doc02.qmd
+
+        - id: section2_name 
+          title: "Get Started with the docs"
+          style: "floating"
+          collapse-level: 3
+          align: left
+          contents:  
+            - text: "Section Intro"
+              href: files/dropdown/section2_name/landing_page2.qmd  
+            - text: "Doc 1"
+              href: files/dropdown/section2_name/doc1.qmd  
+            - text: "Doc 2"
+              href: files/dropdown/Section2_name/doc02.qmd
+    ```
+
+3.  full \_quarto.yml code
+
+    ``` yaml
+    website:
+      navbar:
+
+        left:
+          - text: "Home"
+          
+          - text: "dropdown" # drop-down menu name   
+            menu: 
+              - text: "Section1_name"
+                href: files/dropdown/section1_name/landing_page1.qmd 
+              - text: "Section2_name"
+                href: files/dropdown/section2_name/landing_page2.qmd # most be named index.qmd? or any name ok?
+
+      sidebar:
+        - id: section1_name 
+          title: "Get Started with the docs"
+          style: "floating"
+          collapse-level: 3
+          align: left
+          contents:  
+            - text: "Section Intro"
+              href: files/dropdown/section1_name/landing_page1.qmd  
+            - text: "Doc 1"
+              href: files/dropdown/section1_name/doc1.qmd  
+            - text: "Doc 2"
+              href: files/dropdown/Section1_name/doc02.qmd
+
+        - id: section2_name 
+          title: "Get Started with the docs"
+          style: "floating"
+          collapse-level: 3
+          align: left
+          contents:  
+            - text: "Section Intro"
+              href: files/dropdown/section2_name/landing_page2.qmd  
+            - text: "Doc 1"
+              href: files/dropdown/section2_name/doc1.qmd  
+            - text: "Doc 2"
+              href: files/dropdown/Section2_name/doc02.qmd #.. etc
+    ```
+
+4.  Create the folders where the files will be contained and where the page will list from
+
+    ``` bash
+    mkdir files/dropdown/Section_name/
+    ```
+
+5.  Create the landing page?
+
+    ``` yaml
+    ---
+    title: "Landing page"
+    author: "Marcelo Rosales"
+    date: "2023/07/26"  # Publication date, also can use: today
+    date-meta: "2023/07/20"  # Date of document creation or last modification. It is not shown in render
+    date-modified: last-modified
+    subtitle: Comprehensive guide to using 
+    page-layout: article
+    anchor-sections: false
+    search: false
+    # listing: 
+    #   id: Section_name  # Only if you want a blog like list of the files/docs in the section/folder  
+    #  template: ../../ejs/links.ejs
+    #  contents: guide.yml
+    #image: /images/hero_right.png
+    ---
+    ```
+
+6.  Code for subsequent files/doc/posts
+
+    ``` yaml
+    ---
+    title: "Doc 1"
+    author: "Marcelo Rosales"
+    ---
+    ```
+
+7.  Add more section if needed.
+
+    ``` yaml
+    ```
+
+8.  Code for subsequent files/doc/posts
