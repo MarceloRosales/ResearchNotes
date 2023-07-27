@@ -4,4 +4,4 @@ title: "About"
 
 About this site
 
-This site is available in <http://researchnotes.prostho2.com/>
+This site is available in [http://researchnotes.prostho2.com/](http://researchnotes.prostho2.com/){target="_blank"}
